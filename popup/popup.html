@@ -24,6 +24,7 @@
     <nav class="nav-tabs">
       <button class="nav-tab active" id="tab-btn-schedule">📅 Ekspor Jadwal</button>
       <button class="nav-tab" id="tab-btn-customizer">🎨 Theme & Pet</button>
+      <button class="nav-tab" id="tab-btn-foodtruck">🍱 Foodtruck Helper</button>
     </nav>
 
     <!-- TAB 1: SCHEDULE EXPORTER -->
@@ -140,6 +141,60 @@
       <button id="btn-save-popup-customizer" class="btn btn-primary">
         💾 Simpan & Terapkan di Web SIAP UNDIP
       </button>
+    </main>
+
+    <!-- TAB 3: FOODTRUCK HELPER -->
+    <main id="tab-content-foodtruck" class="tab-content" style="display: none;">
+      <!-- Status Jam Operasional -->
+      <div id="foodtruck-status-card" class="status-card info">
+        <span id="foodtruck-status-icon" class="status-icon">⏰</span>
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span id="foodtruck-status-title" style="font-weight: 700;">Status Pendaftaran Makanan Sehat</span>
+          <span id="foodtruck-status-text">Memeriksa jam server...</span>
+        </div>
+      </div>
+
+      <!-- Quick Action: Buka Portal & Captcha -->
+      <div class="customizer-card">
+        <h3 class="section-title">⚡ Buka Portal & Bypass Captcha</h3>
+        <p style="font-size: 11px; color: var(--text-muted);">Gunakan kontrol di bawah untuk membuka form atau langsung mengeluarkan popup captcha tanpa halangan validasi tanggal/kuota.</p>
+
+        <button id="btn-popup-open-foodtruck" class="btn btn-primary">
+          🚀 Buka Web Pendaftaran Makanan Sehat
+        </button>
+
+        <button id="btn-popup-trigger-captcha" class="btn btn-warning" style="background: linear-gradient(135deg, #ff9f43 0%, #ee5253 100%); color: #fff; box-shadow: 0 4px 12px rgba(238, 82, 83, 0.3);">
+          🔓 Buka Popup Captcha di Tab Aktif
+        </button>
+
+        <button id="btn-popup-unlock-dates" class="btn btn-secondary">
+          📅 Unlock Semua Opsi Tanggal (Buka Kuota Expired)
+        </button>
+      </div>
+
+      <!-- Auto Select Lokasi Favorit -->
+      <div class="customizer-card">
+        <h3 class="section-title">🎯 Target Lokasi Kupon</h3>
+        <select id="foodtruck-location-select" class="input-text">
+          <option value="Student Center">🏛️ Student Center</option>
+          <option value="SA-MWA">🅿️ Halaman Parkir Gedung SA-MWA</option>
+          <option value="Pendopo FSM">🌿 Pendopo FSM</option>
+          <option value="Imam Bardjo">🏛️ Auditorium Imam Bardjo, S.H.</option>
+        </select>
+        <button id="btn-popup-auto-select-location" class="btn btn-secondary">
+          ⚡ Auto-Select Lokasi & Buka Captcha
+        </button>
+      </div>
+
+      <!-- Snippet / Helper Info -->
+      <div class="customizer-card" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2);">
+        <h3 class="section-title" style="color: #34d399;">💡 Tips Pendaftaran Kilat</h3>
+        <ul style="font-size: 11px; color: var(--text-muted); padding-left: 16px; display: flex; flex-direction: column; gap: 4px;">
+          <li>Pendaftaran resmi dibuka tiap jam <strong>10:00 - 11:00 WIB</strong>.</li>
+          <li>Tekan <strong>🔓 Buka Popup Captcha</strong> untuk memasukkan captcha langsung.</li>
+          <li>Script <code>form-captcha-helper.js</code> aktif otomatis di halaman SSO UNDIP.</li>
+        </ul>
+      </div>
     </main>
   </div>
 

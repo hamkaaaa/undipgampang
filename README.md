@@ -25,7 +25,11 @@
   - 🌸 **Sakura** (Soft Pastel Pink)
   - 🖤 **OLED Dark** (Pure Black High Contrast)
 - **🖼️ Custom Wallpaper & Avatar**: Personalisasi foto profil dan background portal SIAP UNDIP menggunakan URL gambar pilihanmu.
-- **🚀 Fun Greeting Banner**: Pesan sapaan interaktif di bagian atas halaman SIAP UNDIP.
+### 🍱 3. Foodtruck Helper (Pendaftaran Makanan Sehat UNDIP)
+- **🔓 Bypass & Force Captcha**: Mengeluarkan modal verifikasi captcha `#captchaModal` secara langsung tanpa terhalang validasi tanggal/kuota.
+- **📅 Unlock All Dates**: Membuka kembali opsi tanggal yang berstatus *disabled* (`##sudah lewat jadwal`).
+- **⏰ Live Countdown Timer (10:00 - 11:00 WIB)**: Indikator real-time jam operasional pendaftaran makanan sehat beserta hitung mundur menuju jam 10:00 WIB.
+- **🎯 Target Lokasi Kupon**: Memilih lokasi (Student Center, SA-MWA, Pendopo FSM, Auditorium Imam Bardjo) dan membuka Captcha dalam 1 klik.
 
 ---
 

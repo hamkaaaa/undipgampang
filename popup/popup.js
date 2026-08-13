@@ -12,21 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Navigation Tabs
   const tabBtnSchedule = document.getElementById('tab-btn-schedule');
   const tabBtnCustomizer = document.getElementById('tab-btn-customizer');
+  const tabBtnFoodtruck = document.getElementById('tab-btn-foodtruck');
+
   const tabContentSchedule = document.getElementById('tab-content-schedule');
   const tabContentCustomizer = document.getElementById('tab-content-customizer');
+  const tabContentFoodtruck = document.getElementById('tab-content-foodtruck');
 
-  tabBtnSchedule.addEventListener('click', () => {
-    tabBtnSchedule.classList.add('active');
-    tabBtnCustomizer.classList.remove('active');
-    tabContentSchedule.style.display = 'flex';
-    tabContentCustomizer.style.display = 'none';
-  });
+  function switchTab(activeBtn, activeContent) {
+    [tabBtnSchedule, tabBtnCustomizer, tabBtnFoodtruck].forEach(b => b.classList.remove('active'));
+    [tabContentSchedule, tabContentCustomizer, tabContentFoodtruck].forEach(c => c.style.display = 'none');
 
-  tabBtnCustomizer.addEventListener('click', () => {
-    tabBtnCustomizer.classList.add('active');
-    tabBtnSchedule.classList.remove('active');
-    tabContentCustomizer.style.display = 'flex';
-    tabContentSchedule.style.display = 'none';
+    activeBtn.classList.add('active');
+    activeContent.style.display = 'flex';
+  }
+
+  tabBtnSchedule.addEventListener('click', () => switchTab(tabBtnSchedule, tabContentSchedule));
+  tabBtnCustomizer.addEventListener('click', () => switchTab(tabBtnCustomizer, tabContentCustomizer));
+  tabBtnFoodtruck.addEventListener('click', () => {
+    switchTab(tabBtnFoodtruck, tabContentFoodtruck);
+    updateFoodtruckTimer();
   });
 
   // DOM Elements (Schedule Exporter)
@@ -349,4 +353,161 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }
+
+  // --- FOODTRUCK HELPER CONTROLLER ---
+  const btnOpenFoodtruck = document.getElementById('btn-popup-open-foodtruck');
+  const btnTriggerCaptcha = document.getElementById('btn-popup-trigger-captcha');
+  const btnUnlockDates = document.getElementById('btn-popup-unlock-dates');
+  const btnAutoSelectLocation = document.getElementById('btn-popup-auto-select-location');
+  const foodtruckLocationSelect = document.getElementById('foodtruck-location-select');
+
+  const foodtruckStatusCard = document.getElementById('foodtruck-status-card');
+  const foodtruckStatusIcon = document.getElementById('foodtruck-status-icon');
+  const foodtruckStatusTitle = document.getElementById('foodtruck-status-title');
+  const foodtruckStatusText = document.getElementById('foodtruck-status-text');
+
+  // Open Web Foodtruck Pendaftaran
+  if (btnOpenFoodtruck) {
+    btnOpenFoodtruck.addEventListener('click', () => {
+      if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+        chrome.tabs.create({ url: 'https://form.undip.ac.id/makanansehat/pendaftaran' });
+      } else {
+        window.open('https://form.undip.ac.id/makanansehat/pendaftaran', '_blank');
+      }
+    });
+  }
+
+  // Trigger Captcha Modal on Active Tab
+  if (btnTriggerCaptcha) {
+    btnTriggerCaptcha.addEventListener('click', () => {
+      executeScriptOnActiveTab(() => {
+        if (typeof window.triggerCaptchaModal === 'function') {
+          window.triggerCaptchaModal(true);
+        } else {
+          // Fallback script if helper not loaded yet
+          const modal = document.getElementById('captchaModal');
+          if (modal) {
+            modal.style.display = 'block';
+            modal.classList.add('show');
+            const bd = document.createElement('div');
+            bd.className = 'modal-backdrop fade show';
+            document.body.appendChild(bd);
+          } else {
+            alert('Modal #captchaModal tidak ditemukan di halaman ini!');
+          }
+        }
+      });
+    });
+  }
+
+  // Unlock all dates
+  if (btnUnlockDates) {
+    btnUnlockDates.addEventListener('click', () => {
+      executeScriptOnActiveTab(() => {
+        const sel = document.getElementById('tanggal');
+        if (sel) {
+          let count = 0;
+          Array.from(sel.options).forEach(opt => {
+            if (opt.disabled) {
+              opt.disabled = false;
+              opt.innerText = opt.innerText.replace('##sudah lewat jadwal', '[AKTIF]');
+              count++;
+            }
+          });
+          alert(`Berhasil membuka ${count} opsi tanggal yang terkunci!`);
+        } else {
+          alert('Elemen <select id="tanggal"> tidak ditemukan!');
+        }
+      });
+    });
+  }
+
+  // Auto-Select Location & Trigger Captcha
+  if (btnAutoSelectLocation) {
+    btnAutoSelectLocation.addEventListener('click', () => {
+      const targetLocation = foodtruckLocationSelect ? foodtruckLocationSelect.value : 'Student Center';
+      
+      executeScriptOnActiveTab((loc) => {
+        const sel = document.getElementById('tanggal');
+        if (sel) {
+          let matchedIndex = -1;
+          Array.from(sel.options).forEach((opt, idx) => {
+            opt.disabled = false;
+            if (opt.text.toLowerCase().includes(loc.toLowerCase())) {
+              matchedIndex = idx;
+            }
+          });
+
+          if (matchedIndex !== -1) {
+            sel.selectedIndex = matchedIndex;
+            sel.dispatchEvent(new Event('change'));
+          } else if (sel.options.length > 1) {
+            sel.selectedIndex = 1;
+          }
+        }
+
+        if (typeof window.triggerCaptchaModal === 'function') {
+          window.triggerCaptchaModal(false);
+        } else {
+          const modal = document.getElementById('captchaModal');
+          if (modal) modal.style.display = 'block';
+        }
+      }, [targetLocation]);
+    });
+  }
+
+  // Helper: Execute Function on Active Tab
+  function executeScriptOnActiveTab(func, args = []) {
+    if (typeof chrome !== 'undefined' && chrome.tabs && chrome.scripting) {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (!tabs || !tabs[0]) return;
+        chrome.scripting.executeScript({
+          target: { tabId: tabs[0].id },
+          func: func,
+          args: args
+        });
+      });
+    } else {
+      alert('Fitur ini berjalan saat ekstensi diaktifkan di browser.');
+    }
+  }
+
+  // Live Timer for Foodtruck Operational Hours (10:00 - 11:00 WIB)
+  function updateFoodtruckTimer() {
+    if (!foodtruckStatusCard) return;
+
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    // Check if between 10:00:00 and 10:59:59
+    if (hours === 10) {
+      foodtruckStatusCard.className = 'status-card success';
+      foodtruckStatusIcon.textContent = '🟢';
+      foodtruckStatusTitle.textContent = 'PENDAFTARAN SEDANG TERBUKA!';
+      foodtruckStatusText.textContent = `Waktu tersisa: ${59 - minutes} menit lagi (Tutup jam 11:00 WIB)`;
+    } else {
+      foodtruckStatusCard.className = 'status-card warning';
+      foodtruckStatusIcon.textContent = '🔴';
+      foodtruckStatusTitle.textContent = 'Pendaftaran Ditutup (Buka Jam 10:00 WIB)';
+
+      // Calculate countdown to next 10:00 AM
+      const nextOpen = new Date(now);
+      if (hours >= 11) {
+        nextOpen.setDate(nextOpen.getDate() + 1);
+      }
+      nextOpen.setHours(10, 0, 0, 0);
+
+      const diffMs = nextOpen - now;
+      const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
+      const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+      const diffSecs = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+      foodtruckStatusText.textContent = `Hitung mundur buka: ${diffHrs}j ${diffMins}m ${diffSecs}s lagi`;
+    }
+  }
+
+  // Init timer & interval
+  updateFoodtruckTimer();
+  setInterval(updateFoodtruckTimer, 1000);
 });
