@@ -154,17 +154,33 @@
         </div>
       </div>
 
-      <!-- Quick Action: Buka Portal & Captcha -->
-      <div class="customizer-card">
-        <h3 class="section-title">⚡ Buka Portal & Bypass Captcha</h3>
-        <p style="font-size: 11px; color: var(--text-muted);">Gunakan kontrol di bawah untuk membuka form atau langsung mengeluarkan popup captcha tanpa halangan validasi tanggal/kuota.</p>
-
-        <button id="btn-popup-open-foodtruck" class="btn btn-primary">
-          🚀 Buka Web Pendaftaran Makanan Sehat
-        </button>
-
+      <!-- Status Captcha Verification -->
+      <div id="popup-captcha-status-card" class="customizer-card" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.25);">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <span class="section-title" style="color: #f87171;">🔐 Status Pre-Verifikasi Captcha</span>
+          <span id="popup-captcha-badge" class="version-badge" style="background: #ef4444; color: #fff;">BELUM VERIFIKASI</span>
+        </div>
+        <p style="font-size: 11px; color: var(--text-muted);">
+          Isi Captcha <strong>sebelum jam 10:00 WIB</strong>. Captcha akan disimpan dan otomatis di-submit saat jam 10:00:00 WIB setelah lokasi dipilih.
+        </p>
         <button id="btn-popup-trigger-captcha" class="btn btn-warning" style="background: linear-gradient(135deg, #ff9f43 0%, #ee5253 100%); color: #fff; box-shadow: 0 4px 12px rgba(238, 82, 83, 0.3);">
-          🔓 Buka Popup Captcha di Tab Aktif
+          🔓 Buka & Verifikasi Captcha Sekarang
+        </button>
+      </div>
+
+      <!-- Auto Select Lokasi & Auto Snipe -->
+      <div class="customizer-card">
+        <h3 class="section-title">🎯 Pilih Target Lokasi (1 dari 12 Pilihan)</h3>
+        <select id="foodtruck-location-select" class="input-text">
+          <option value="Student Center">🏛️ Student Center</option>
+          <option value="SA-MWA">🅿️ Halaman Parkir Gedung SA-MWA</option>
+          <option value="Pendopo FSM">🌿 Pendopo FSM (seberang FPIK)</option>
+          <option value="Imam Bardjo">🏛️ Auditorium Imam Bardjo, S.H.</option>
+          <option value="any">🌟 Pilihan Kuota Pertama Apapun (Auto Any)</option>
+        </select>
+
+        <button id="btn-popup-auto-snipe-now" class="btn btn-primary" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);">
+          🚀 Auto-Select Lokasi & Submit Sekarang
         </button>
 
         <button id="btn-popup-unlock-dates" class="btn btn-secondary">
@@ -172,28 +188,11 @@
         </button>
       </div>
 
-      <!-- Auto Select Lokasi Favorit -->
+      <!-- Quick Action: Buka Portal Web -->
       <div class="customizer-card">
-        <h3 class="section-title">🎯 Target Lokasi Kupon</h3>
-        <select id="foodtruck-location-select" class="input-text">
-          <option value="Student Center">🏛️ Student Center</option>
-          <option value="SA-MWA">🅿️ Halaman Parkir Gedung SA-MWA</option>
-          <option value="Pendopo FSM">🌿 Pendopo FSM</option>
-          <option value="Imam Bardjo">🏛️ Auditorium Imam Bardjo, S.H.</option>
-        </select>
-        <button id="btn-popup-auto-select-location" class="btn btn-secondary">
-          ⚡ Auto-Select Lokasi & Buka Captcha
+        <button id="btn-popup-open-foodtruck" class="btn btn-secondary" style="background: #3b82f6; color: #fff;">
+          🌐 Buka Web Pendaftaran Makanan Sehat UNDIP
         </button>
-      </div>
-
-      <!-- Snippet / Helper Info -->
-      <div class="customizer-card" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2);">
-        <h3 class="section-title" style="color: #34d399;">💡 Tips Pendaftaran Kilat</h3>
-        <ul style="font-size: 11px; color: var(--text-muted); padding-left: 16px; display: flex; flex-direction: column; gap: 4px;">
-          <li>Pendaftaran resmi dibuka tiap jam <strong>10:00 - 11:00 WIB</strong>.</li>
-          <li>Tekan <strong>🔓 Buka Popup Captcha</strong> untuk memasukkan captcha langsung.</li>
-          <li>Script <code>form-captcha-helper.js</code> aktif otomatis di halaman SSO UNDIP.</li>
-        </ul>
       </div>
     </main>
   </div>

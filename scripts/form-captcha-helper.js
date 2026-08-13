@@ -1,14 +1,28 @@
 /**
- * UndipGampang - Form & Captcha Helper Tool
- * Tool untuk membuka popup Captcha SSO Form UNDIP (Makanan Sehat & Form SSO lainnya)
- * secara instan tanpa terhalang validasi tanggal / kuota.
+ * UndipGampang - Form & Captcha Helper Tool (Sniper Edition v3.5)
+ * 
+ * Fitur Utama:
+ * 1. Pre-verify Captcha sebelum jam 10:00 WIB (menahan form submit otomatis).
+ * 2. Auto-Select 1 dari 12 Lokasi Makanan Sehat UNDIP pada jam 10:00:00 WIB.
+ * 3. Auto-Submit Form menggunakan captcha yang sudah terverifikasi sebelumnya.
  */
 
 (function () {
   'use strict';
 
-  // Global helper function accessible from console
-  window.triggerCaptchaModal = function (forceEnableDates = true) {
+  // Global State
+  window.undipCaptchaVerified = false;
+  window.undipVerifiedTimestamp = null;
+  window.undipHoldSubmit = true; // Default hold submit before 10:00 AM
+  window.undipForceSubmitNow = false;
+  window.undipTargetLocation = 'Student Center'; // Default location target
+  window.undipAutoSnipeEnabled = true;
+  window.undipSnipeExecuted = false;
+
+  // Global Function: Trigger Captcha Modal with Pre-verify mode
+  window.triggerCaptchaModal = function (forceEnableDates = true, targetLoc = null) {
+    if (targetLoc) window.undipTargetLocation = targetLoc;
+
     const modal = document.getElementById('captchaModal');
     if (!modal) {
       console.warn('[UndipGampang] Modal #captchaModal tidak ditemukan di halaman ini.');
@@ -18,21 +32,7 @@
 
     // 1. Enable disabled date options if requested
     if (forceEnableDates) {
-      const selectTanggal = document.getElementById('tanggal');
-      if (selectTanggal) {
-        let enabledCount = 0;
-        Array.from(selectTanggal.options).forEach((opt, idx) => {
-          if (opt.disabled) {
-            opt.disabled = false;
-            opt.innerText = opt.innerText.replace('##sudah lewat jadwal', '[DIBUKA ULANG]');
-            enabledCount++;
-          }
-        });
-        if (!selectTanggal.value && selectTanggal.options.length > 1) {
-          selectTanggal.selectedIndex = 1;
-        }
-        console.log(`[UndipGampang] ${enabledCount} opsi tanggal telah dibuka/di-enable.`);
-      }
+      window.unlockAllLocationOptions(false);
     }
 
     // 2. Show Modal via jQuery/Bootstrap if available, otherwise direct DOM fallback
@@ -70,7 +70,7 @@
       });
     }
 
-    // 3. Refresh captcha image if img element exists
+    // 3. Refresh captcha image
     const captchaImg = document.getElementById('captcha_image');
     if (captchaImg) {
       const timestamp = new Date().getTime();
@@ -87,11 +87,206 @@
       setTimeout(() => input.focus(), 300);
     }
 
-    console.log('[UndipGampang] Popup Captcha berhasil dibuka!');
+    console.log('[UndipGampang] Popup Captcha dibuka.');
     return true;
   };
 
-  // Inject Quick Trigger Widget into the page if SSO Form / Captcha Modal exists
+  // Helper: Unlock all options in <select id="tanggal">
+  window.unlockAllLocationOptions = function (showAlert = true) {
+    const selectTanggal = document.getElementById('tanggal');
+    if (!selectTanggal) {
+      if (showAlert) alert('Elemen <select id="tanggal"> tidak ditemukan!');
+      return 0;
+    }
+
+    let enabledCount = 0;
+    Array.from(selectTanggal.options).forEach((opt) => {
+      if (opt.disabled) {
+        opt.disabled = false;
+        opt.innerText = opt.innerText.replace('##sudah lewat jadwal', '[TERSEDIA]');
+        enabledCount++;
+      }
+    });
+
+    if (showAlert) {
+      alert(`Berhasil membuka ${enabledCount} lokasi/jadwal yang terkunci!`);
+    }
+    return enabledCount;
+  };
+
+  // Helper: Auto Select Location & Auto Submit Form
+  window.executeAutoSelectAndSubmit = function (targetLoc) {
+    if (targetLoc) window.undipTargetLocation = targetLoc;
+    const locName = window.undipTargetLocation || 'Student Center';
+
+    console.log(`[UndipGampang Snipe] Executing auto-select for location: "${locName}"`);
+
+    // 1. Unlock options
+    window.unlockAllLocationOptions(false);
+
+    // 2. Find and select target location
+    const sel = document.getElementById('tanggal');
+    let selectedIndex = -1;
+
+    if (sel && sel.options.length > 0) {
+      Array.from(sel.options).forEach((opt, idx) => {
+        if (locName !== 'any' && opt.text.toLowerCase().includes(locName.toLowerCase())) {
+          if (selectedIndex === -1) selectedIndex = idx;
+        }
+      });
+
+      // Fallback if target location string not directly found
+      if (selectedIndex === -1) {
+        for (let i = 1; i < sel.options.length; i++) {
+          if (!sel.options[i].text.includes('sisa kuota 0')) {
+            selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      if (selectedIndex === -1 && sel.options.length > 1) {
+        selectedIndex = 1;
+      }
+
+      if (selectedIndex !== -1) {
+        sel.selectedIndex = selectedIndex;
+        sel.dispatchEvent(new Event('change'));
+        console.log(`[UndipGampang Snipe] Selected option [${selectedIndex}]: ${sel.options[selectedIndex].text}`);
+      }
+    }
+
+    // 3. Force Submit Form
+    window.undipForceSubmitNow = true;
+    const form = document.getElementById('reg_ddart_covid');
+    if (form) {
+      console.log('[UndipGampang Snipe] Submitting form #reg_ddart_covid...');
+      form.submit();
+      window.undipSnipeExecuted = true;
+      updatePageBannerStatus('🚀 FORM BERHASIL DI-SUBMIT KILAT!', 'success');
+      return true;
+    } else {
+      alert('Form #reg_ddart_covid tidak ditemukan di halaman ini.');
+      return false;
+    }
+  };
+
+  // --- INTERCEPT FORM SUBMISSION BEFORE 10:00 AM ---
+  function initFormSubmitInterceptor() {
+    const form = document.getElementById('reg_ddart_covid');
+    if (!form) return;
+
+    // Use capturing phase so our listener fires BEFORE inline JS / jQuery submit handlers!
+    form.addEventListener('submit', function (e) {
+      const now = new Date();
+      const isBefore10 = now.getHours() < 10;
+
+      // If hold submit is active AND we are before 10 AM AND forceSubmit is NOT set
+      if (window.undipHoldSubmit && isBefore10 && !window.undipForceSubmitNow) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        console.log('[UndipGampang] Captcha berhasil diverifikasi! Form submit ditahan hingga jam 10:00:00 WIB.');
+
+        // Hide Captcha modal
+        if (window.jQuery && window.jQuery.fn && window.jQuery.fn.modal) {
+          window.jQuery('#captchaModal').modal('hide');
+        } else {
+          const modal = document.getElementById('captchaModal');
+          if (modal) modal.style.display = 'none';
+          const bd = document.getElementById('undip-gampang-backdrop') || document.querySelector('.modal-backdrop');
+          if (bd) bd.remove();
+          document.body.classList.remove('modal-open');
+        }
+
+        window.undipCaptchaVerified = true;
+        window.undipVerifiedTimestamp = new Date();
+
+        updatePageBannerStatus(
+          `🟢 CAPTCHA TERVERIFIKASI (${window.undipVerifiedTimestamp.toLocaleTimeString()})! Helper Siap Auto-Select & Submit Jam 10:00:00 WIB.`,
+          'success'
+        );
+
+        return false;
+      }
+    }, true);
+  }
+
+  // --- INTERCEPT JQUERY AJAX VERIFY CAPTCHA RESPONSE ---
+  function initAjaxInterceptor() {
+    if (window.jQuery) {
+      window.jQuery(document).ajaxSuccess(function (event, xhr, settings, data) {
+        if (settings && settings.url && settings.url.includes('validate_captcha')) {
+          try {
+            let resp = (typeof data === 'string') ? JSON.parse(data) : data;
+            if (resp && resp.status === 'ok') {
+              window.undipCaptchaVerified = true;
+              window.undipVerifiedTimestamp = new Date();
+              console.log('[UndipGampang] Captcha Verified via AJAX!');
+              updatePageBannerStatus(
+                `🟢 CAPTCHA TERVERIFIKASI (${window.undipVerifiedTimestamp.toLocaleTimeString()})! Helper Siap Auto-Select & Submit Jam 10:00:00 WIB.`,
+                'success'
+              );
+            }
+          } catch (e) {}
+        }
+      });
+    }
+  }
+
+  // --- PAGE BANNER STATUS ---
+  function updatePageBannerStatus(msg, type = 'info') {
+    let banner = document.getElementById('undip-sniper-banner');
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'undip-sniper-banner';
+      banner.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999999;
+        padding: 10px 16px;
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        transition: all 0.3s ease;
+      `;
+      document.body.prepend(banner);
+    }
+
+    if (type === 'success') {
+      banner.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+      banner.style.color = '#ffffff';
+    } else {
+      banner.style.background = 'linear-gradient(135deg, #ff9f43 0%, #ee5253 100%)';
+      banner.style.color = '#ffffff';
+    }
+
+    banner.innerHTML = `⚡ UndipGampang Foodtruck Helper: ${msg}`;
+  }
+
+  // --- AUTOMATED 10:00:00 WIB TIMER SNIPER ---
+  function initSniperClock() {
+    setInterval(() => {
+      if (window.undipSnipeExecuted || !window.undipAutoSnipeEnabled) return;
+
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      // Trigger precisely at 10:00:00 AM WIB
+      if (hours === 10 && minutes === 0 && seconds === 0) {
+        console.log('[UndipGampang Snipe] 🕒 JAM 10:00:00 WIB DIREACH! Executing Auto-Select & Submit!');
+        window.executeAutoSelectAndSubmit(window.undipTargetLocation);
+      }
+    }, 500);
+  }
+
+  // --- FLOATING WIDGET UI ---
   function injectCaptchaToolWidget() {
     if (document.getElementById('undip-captcha-tool-widget')) return;
 
@@ -100,113 +295,140 @@
 
     if (!modal && !submitBtn) return; // Not an SSO Form page
 
-    // Create Floating Control Widget
     const widget = document.createElement('div');
     widget.id = 'undip-captcha-tool-widget';
     widget.style.cssText = `
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 20px;
+      right: 20px;
       z-index: 999999;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #ffffff;
-      padding: 14px 18px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      padding: 14px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
+      width: 290px;
+      border: 1px solid rgba(255,255,255,0.12);
     `;
 
     widget.innerHTML = `
-      <div style="display: flex; align-items: center; justify-content: space-between; font-weight: bold; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 6px;">
-        <span>⚡ UndipGampang Captcha Tool</span>
+      <div style="display: flex; align-items: center; justify-content: space-between; font-weight: bold; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 6px; color: #38bdf8;">
+        <span>🍱 Foodtruck Auto-Sniper</span>
         <span style="cursor: pointer; opacity: 0.8; padding: 0 4px;" onclick="this.parentElement.parentElement.remove()">✕</span>
       </div>
-      <button id="btn-trigger-captcha-popup" style="
-        background: #ff9f43;
+
+      <div id="widget-captcha-status" style="
+        background: rgba(239, 68, 68, 0.15);
+        color: #f87171;
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      ">
+        🔴 Captcha Belum Terverifikasi
+      </div>
+
+      <button id="btn-widget-verify-captcha" style="
+        background: linear-gradient(135deg, #ff9f43 0%, #ee5253 100%);
         color: #ffffff;
         border: none;
-        padding: 9px 14px;
-        border-radius: 6px;
+        padding: 9px 12px;
+        border-radius: 8px;
         font-weight: bold;
         cursor: pointer;
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        box-shadow: 0 4px 12px rgba(255, 159, 67, 0.4);
-        transition: all 0.2s ease;
+        font-size: 12px;
+        box-shadow: 0 4px 12px rgba(238, 82, 83, 0.3);
       ">
-        🔓 Buka Popup Captcha (Bypass Validasi)
+        🔓 Pre-Verify Captcha Sekarang
       </button>
-      <button id="btn-enable-all-dates" style="
-        background: #28c76f;
+
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <label style="font-weight: 600; color: #94a3b8; font-size: 11px;">Target Lokasi Makanan Sehat:</label>
+        <select id="widget-location-select" style="
+          background: #0f172a;
+          color: #ffffff;
+          border: 1px solid #334155;
+          padding: 6px 8px;
+          border-radius: 6px;
+          font-size: 11px;
+          outline: none;
+        ">
+          <option value="Student Center">🏛️ Student Center</option>
+          <option value="SA-MWA">🅿️ Halaman Parkir SA-MWA</option>
+          <option value="Pendopo FSM">🌿 Pendopo FSM</option>
+          <option value="Imam Bardjo">🏛️ Auditorium Imam Bardjo</option>
+          <option value="any">🌟 Pilihan Kuota Pertama (Auto)</option>
+        </select>
+      </div>
+
+      <button id="btn-widget-test-snipe" style="
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: #ffffff;
         border: none;
-        padding: 7px 12px;
-        border-radius: 6px;
-        font-weight: 500;
+        padding: 9px 12px;
+        border-radius: 8px;
+        font-weight: bold;
         cursor: pointer;
         font-size: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
       ">
-        📅 Buka Semua Opsi Tanggal Dihapus/Disabled
+        🚀 Exec Auto-Select & Submit Sekarang
       </button>
     `;
 
     document.body.appendChild(widget);
 
-    // Event handlers
-    document.getElementById('btn-trigger-captcha-popup').addEventListener('click', function () {
+    // Update status in widget periodically
+    setInterval(() => {
+      const statusDiv = document.getElementById('widget-captcha-status');
+      if (statusDiv) {
+        if (window.undipCaptchaVerified) {
+          statusDiv.style.background = 'rgba(16, 185, 129, 0.15)';
+          statusDiv.style.color = '#34d399';
+          statusDiv.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+          statusDiv.innerHTML = '🟢 Captcha TERVERIFIKASI & TERKUNCI!';
+        } else {
+          statusDiv.style.background = 'rgba(239, 68, 68, 0.15)';
+          statusDiv.style.color = '#f87171';
+          statusDiv.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+          statusDiv.innerHTML = '🔴 Captcha Belum Terverifikasi';
+        }
+      }
+    }, 500);
+
+    // Event Handlers
+    document.getElementById('btn-widget-verify-captcha').addEventListener('click', () => {
       window.triggerCaptchaModal(true);
     });
 
-    document.getElementById('btn-enable-all-dates').addEventListener('click', function () {
-      const selectTanggal = document.getElementById('tanggal');
-      if (selectTanggal) {
-        let count = 0;
-        Array.from(selectTanggal.options).forEach(opt => {
-          if (opt.disabled) {
-            opt.disabled = false;
-            opt.innerText = opt.innerText.replace('##sudah lewat jadwal', '[AKTIF]');
-            count++;
-          }
-        });
-        alert(`Berhasil membuka ${count} opsi tanggal yang tadinya terkunci!`);
-      } else {
-        alert('Elemen <select id="tanggal"> tidak ditemukan!');
-      }
+    document.getElementById('widget-location-select').addEventListener('change', (e) => {
+      window.undipTargetLocation = e.target.value;
+      console.log('[UndipGampang Widget] Target location set to:', window.undipTargetLocation);
     });
 
-    // Also add inline trigger next to #btn_submit_pendaftaran if present
-    if (submitBtn && !document.getElementById('btn_direct_captcha_inline')) {
-      const inlineBtn = document.createElement('button');
-      inlineBtn.type = 'button';
-      inlineBtn.id = 'btn_direct_captcha_inline';
-      inlineBtn.className = 'btn btn-square btn-warning ml-1';
-      inlineBtn.innerHTML = '<i class="ft-shield"></i> Buka Popup Captcha';
-      inlineBtn.style.fontWeight = 'bold';
-      inlineBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.triggerCaptchaModal(true);
-      });
-      submitBtn.parentNode.appendChild(inlineBtn);
-    }
+    document.getElementById('btn-widget-test-snipe').addEventListener('click', () => {
+      const loc = document.getElementById('widget-location-select').value;
+      window.executeAutoSelectAndSubmit(loc);
+    });
   }
 
-  // Auto-init on page load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectCaptchaToolWidget);
-  } else {
+  // Init sequence
+  function init() {
+    initFormSubmitInterceptor();
+    initAjaxInterceptor();
+    initSniperClock();
     injectCaptchaToolWidget();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
