@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UndipGampang v3.0 - UNDIP Suite & Pet</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-box">
+        <span class="logo-icon">⚡</span>
+        <div>
+          <h1 class="logo-title">UndipGampang</h1>
+          <p class="logo-subtitle">UNDIP Suite & Desktop Pet</p>
+        </div>
+      </div>
+      <span class="version-badge">v3.0</span>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" id="tab-btn-schedule">📅 Ekspor Jadwal</button>
+      <button class="nav-tab" id="tab-btn-customizer">🎨 Theme & Pet</button>
+    </nav>
+
+    <!-- TAB 1: SCHEDULE EXPORTER -->
+    <main id="tab-content-schedule" class="tab-content active">
+      <div id="status-card" class="status-card info">
+        <span id="status-icon" class="status-icon">🔍</span>
+        <span id="status-text">Mencari tabel jadwal kuliah...</span>
+      </div>
+
+      <div class="mode-selector-card">
+        <span class="mode-label">Mode Ekspor:</span>
+        <div class="mode-options">
+          <label class="mode-option active" id="label-mode-specific">
+            <input type="radio" name="export-mode" value="specific" checked />
+            <span>🎯 Tanggal Presisi (Absen)</span>
+          </label>
+          <label class="mode-option" id="label-mode-weekly">
+            <input type="radio" name="export-mode" value="weekly" />
+            <span>🔄 Estimasi Mingguan</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="drop-zone" class="drop-zone">
+        <div class="drop-zone-content">
+          <span class="drop-icon">📁</span>
+          <p class="drop-text">Drag & drop file <strong>JADWAL KULIAH.html</strong> / <strong>KLIKLIHATABSEN.html</strong></p>
+          <p class="drop-subtext">atau klik untuk memilih file dari komputer</p>
+          <input type="file" id="file-input" accept=".html,.htm" hidden />
+        </div>
+      </div>
+
+      <div id="config-weekly-card" class="config-card" style="display: none;">
+        <div class="config-row">
+          <div class="config-group">
+            <label for="start-date">Tanggal Mulai Semester</label>
+            <input type="date" id="start-date" value="2026-08-24" />
+          </div>
+          <div class="config-group">
+            <label for="weeks-count">Durasi (Minggu)</label>
+            <input type="number" id="weeks-count" value="16" min="1" max="24" />
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-section">
+        <div class="preview-header">
+          <h2>Pratinjau Jadwal (<span id="course-count">0</span>)</h2>
+          <button id="btn-reload" class="btn-icon" title="Muat Ulang Halaman">🔄</button>
+        </div>
+
+        <div id="course-list" class="course-list">
+          <div class="empty-state">
+            <p>Belum ada jadwal yang terdeteksi.</p>
+            <p class="sub">Buka SIAP UNDIP atau upload file HTML.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-footer">
+        <button id="btn-export-ics" class="btn btn-primary" disabled>
+          <span>📅</span> Download Google Calendar (.ics)
+        </button>
+        <div class="secondary-actions">
+          <button id="btn-export-csv" class="btn btn-secondary" disabled>
+            <span>📊</span> Ekspor CSV
+          </button>
+          <button id="btn-copy-summary" class="btn btn-secondary" disabled>
+            <span>📋</span> Salin Teks
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 2: SIAP CUSTOMIZER & DESKTOP PET -->
+    <main id="tab-content-customizer" class="tab-content" style="display: none;">
+      <div class="customizer-card">
+        <h3 class="section-title">🐾 Pilih Desktop Pet Mascot (GIF)</h3>
+        <select id="popup-select-pet" class="input-text">
+          <option value="pikachu">⚡ Pikachu</option>
+          <option value="gengar">👻 Gengar</option>
+          <option value="eevee">🦊 Eevee</option>
+          <option value="cybercat">🐱 Cyber Cat</option>
+        </select>
+        <input type="text" id="popup-custom-pet-url" placeholder="Paste URL Pet GIF Custom (Opsional)" class="input-text" style="margin-top: 4px;" />
+      </div>
+
+      <div class="customizer-card">
+        <h3 class="section-title">🎨 Pilih Tema Preset</h3>
+        <div class="theme-grid">
+          <button class="theme-btn active" data-theme="cyberpunk">🌌 Cyberpunk</button>
+          <button class="theme-btn" data-theme="sunset">🌅 Sunset</button>
+          <button class="theme-btn" data-theme="emerald">🌿 Emerald</button>
+          <button class="theme-btn" data-theme="sakura">🌸 Sakura</button>
+          <button class="theme-btn" data-theme="oled">🖤 OLED Dark</button>
+        </div>
+      </div>
+
+      <div class="customizer-card">
+        <h3 class="section-title">🖼️ Custom Wallpaper Latar</h3>
+        <input type="text" id="popup-wallpaper-url" placeholder="Paste URL Gambar Wallpaper" class="input-text" />
+      </div>
+
+      <div class="customizer-card">
+        <h3 class="section-title">🖼️ Custom Foto Profil (Avatar)</h3>
+        <input type="text" id="popup-avatar-url" placeholder="Paste URL Foto Profil Baru" class="input-text" />
+      </div>
+
+      <div class="customizer-card">
+        <h3 class="section-title">🚀 Pesan Sapaan Fun</h3>
+        <input type="text" id="popup-greeting-text" value="Halo Hamka! ⚡ Siap taklukkan semester ini?" class="input-text" />
+      </div>
+
+      <button id="btn-save-popup-customizer" class="btn btn-primary">
+        💾 Simpan & Terapkan di Web SIAP UNDIP
+      </button>
+    </main>
+  </div>
+
+  <script src="../scripts/parser.js"></script>
+  <script src="../scripts/ics-generator.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

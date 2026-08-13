@@ -1,0 +1,10 @@
+# Dependencies & Build
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test outputs
+*.csv
+*.ics
