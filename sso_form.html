@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://form.undip.ac.id/makanansehat/pendaftaran -->
+<html class="loaded" lang="en" data-textdirection="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="">
+	<meta name="author" content="Manuk">
+	<title>SSO Form - Formulir Pendaftaran Makanan Sehat</title>
+	<link rel="apple-touch-icon" href="https://form.undip.ac.id/template_assets/robust/app-assets/images/ico/apple-icon-undip-120.png">
+	<link rel="shortcut icon" type="image/x-icon" href="https://form.undip.ac.id/template_assets/robust/app-assets/images/ico/favicon-undip.ico">
+	<link href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/css" rel="stylesheet">
+	
+	<!-- BEGIN VENDOR CSS-->
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/vendors.css">
+	
+
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/jquery-jvectormap-2.0.3.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/morris.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/unslider.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/climacons.min.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/toastr.css">
+	<!-- END VENDOR CSS-->
+	<!-- BEGIN ROBUST CSS-->
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/app.css">
+	<!-- END ROBUST CSS-->
+	<!-- BEGIN Page Level CSS-->
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/vertical-content-menu.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/palette-gradient.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/animate.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/palette-callout.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/clndr.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/style.min.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/icheck.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/custom.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/checkboxes-radios.css">
+	<!-- END Page Level CSS-->
+	<!-- BEGIN Custom CSS-->
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://form.undip.ac.id/assets/app/plugins/fontawesome-5.7.2/css/all.css"> -->
+	<!-- END Custom CSS-->
+	
+	<!-------------------------------------------
+  // LETAKKAN CSS EXTERNAL DISINI
+  //------------------------------------------->
+
+
+	
+	<!-- BEGIN INNER PAGE LEVEL CSS -->
+    <link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/global.css">
+	<link rel="stylesheet" type="text/css" href="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/owl.carousel.min.css">
+	
+	
+	<!-- BEGIN Custom CSS-->
+	<!-- <link rel="stylesheet" type="text/css" href="https://form.undip.ac.id/assets/css/style.css"> -->
+	<!-- END Custom CSS-->
+	<style type="text/css">
+		
+		/* INSERT GLOBAL CSS */
+		
+		
+		.grocery-crud-table thead tr th {
+			vertical-align: middle;
+			/*border: 1px solid #e3ebf3 !important;*/
+			/*    border-top: 1px solid #e3ebf3;
+				border-bottom: 2px solid #e3ebf3;*/
+			
+			padding-right: .5rem !important;
+			padding-left: .5rem !important;
+			
+		}
+		
+		.grocery-crud-table thead tr td {
+			padding: 0.5rem !important;
+		}
+		
+		.grocery-crud-table tbody tr td {
+			/*font-size: 12px !important;*/
+			vertical-align: middle;
+			padding: 0.5rem !important;
+		}
+		
+		.gc-container table.grocery-crud-table {
+		
+		}
+		
+		/*.form-group {
+			margin-bottom: 0.5rem !important;
+		}*/
+		
+		/**
+		* overide chosen css from jquery_plugin
+		*/
+		.chosen-container-multi .chosen-choices {
+			position: relative;
+			overflow: hidden;
+			margin: 0;
+			padding: 0 5px;
+			width: 100%;
+			height: auto !important;
+			height: 1%;
+			border: 1px solid #aaa;
+			background-color: #fff;
+			/* background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff)); */
+			/* background-image: -webkit-linear-gradient(#eeeeee 1%, #ffffff 15%); */
+			/* background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);*/
+			/* background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);*/
+			/* background-image: linear-gradient(#eeeeee 1%, #ffffff 15%); */
+			background-image: none !important;
+			cursor: text;
+			color: #5a5a5a;
+			border: 1px solid #d4d4d4;
+			font-size: 1rem;
+			line-height: 1.25;
+			display: block;
+			width: 100%;
+			height: -webkit-calc(2.75rem + 2px);
+			height: -moz-calc(2.75rem + 2px);
+			height: calc(2.75rem + 2px);
+			padding: .5rem 1rem;
+			-webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+			-moz-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+			-o-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+			transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+			transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+			transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+			color: #4e5154;
+			/* border: 1px solid #adb5bd; */
+			border-radius: .21rem;
+			background-color: #fff;
+			background-clip: padding-box;
+		}
+		
+		/*@media print {
+		  body * {
+			visibility: hidden;
+		  }
+		  #section-to-print, #section-to-print * {
+			visibility: visible;
+		  }
+		  #section-to-print {
+			position: static; left: 0; top: 0; display: block; width: auto;
+		  }
+		}*/
+		.edit_readonly {
+			padding-top: 7px;
+			padding-bottom: 5px;
+			padding-left: 7px;
+			/*vertical-align: middle;*/
+			background-color: #ececec;
+		}
+		
+		.read-row > .edit_readonly {
+			padding: 0px !important;
+			background-color: unset !important;
+		}
+		
+		.chosen-container-single .chosen-single {
+			padding: 3px 0 0 8px;
+			height: 35px;
+			border: 1px solid #d4d4d4;
+			border-radius: 3px;
+			background-color: #fff;
+			background: -webkit-unset;
+			background: -moz-unset;
+			background: -o-unset;
+			background: unset;
+			box-shadow: unset;
+		}
+		
+		.chosen-container-active.chosen-with-drop .chosen-single {
+			border: 1px solid #3bafda;
+			background-image: -webkit-unset;
+			background-image: -webkit-unset;
+			background-image: -moz-unset;
+			background-image: -o-unset;
+			background-image: unset;
+		}
+		
+		.chosen-container .chosen-drop {
+			border: 1px solid #3bafda;
+			border-top: none;
+		}
+		
+		.gc-container .chosen-container {
+			padding-top: 0;
+		}
+		
+		.chosen-container-active.chosen-with-drop .chosen-single div b {
+			background-position: -18px 7px;
+		}
+		
+		.chosen-container-single .chosen-single abbr {
+			top: 10px;
+		}
+		
+		.chosen-container-single .chosen-single div b {
+			background-position: 0px 6px;
+		}
+		
+		.badge.badge-border {
+			border-width: 1px !important;
+		}
+		
+		.tooltip {
+			z-index: 9999;
+		}
+		.tooltip-inner {
+			max-width: 500px;
+		}
+		/**
+		*
+		*/
+		input[type="search"]:focus {
+			background: #ddf1fd;
+		}
+	</style>
+	
+	<style type="text/css">
+		/* INSERT GLOBAL CSS */
+		.table th {
+			padding-right: 0.25rem !important;
+			padding-left: 0.25rem !important;
+		}
+		
+		.table td {
+			padding: 0.25rem !important;
+		}
+		
+		
+		.customizer.open {
+			/*right: 50px;*/
+		}
+		
+		.customizer {
+			right: -700px;
+			width: 700px;
+		}
+		
+		.customizer .customizer-toggle {
+			left: -84px;
+			width: 84px;
+		}
+		
+		.footer {
+			display: none;
+		}
+		
+<!--		-->/*		.navbar-horizontal {*/
+/*			display: none !important;*/
+/*		}*/
+/*		*/
+/*		.sticky-wrapper {*/
+/*			display: none !important;*/
+/*		}*/
+/*		*/
+/*		.nav-menu-main {*/
+/*			display: none !important;*/
+/*		}*/
+/*		*/
+/*		*/
+<!--		-->		@media (max-width: 767px) {
+			.navbar-horizontal {
+				display: block !important;
+			}
+			
+			.sticky-wrapper {
+				display: block !important;
+			}
+			
+			.nav-menu-main {
+				display: block !important;
+			}
+		}
+		
+<!--		-->		
+		@media (min-width: 992px) {
+			.footer {
+				display: block;
+			}
+		}
+		
+		.header-navbar .navbar-container ul.nav li a.dropdown-user-link {
+			padding: .8rem .4rem;
+		}
+		
+		.horizontal-menu .navbar-container .dropdown-menu .dropdown-submenu.show .dropdown-menu {
+			overflow-y: scroll;
+			min-width: 200px;
+			max-height: 300px;
+		}
+		
+		.box {
+			overflow-x: auto;
+			overflow-y: hidden;
+			width: auto;
+			/*margin:60px;*/
+			-webkit-touch-callout: auto;
+			-webkit-user-select: auto;
+			-moz-user-select: auto;
+			-ms-user-select: auto;
+			user-select: auto;
+			cursor: move;
+		}
+		
+		/*@media (min-width: 768px) {*/
+		/*	.navbar-expand-md .navbar-collapse {*/
+		/*		min-height: 70px;*/
+		/*	}*/
+		/*}*/
+		
+		/*.top-right-icon {*/
+		/*	position: absolute;*/
+		/*	top: 0;*/
+		/*	right: 0;*/
+		/*	cursor: pointer;*/
+		/*}*/
+		
+		/*.header-navbar.navbar-brand-center .navbar-header {*/
+		/*	left: 100px;*/
+		/*}*/
+		
+		/*@media (min-width: 768px) {*/
+		/*	.header-navbar .navbar-header .navbar-brand .brand-text {*/
+		/*		font-size: 2.8rem !important;*/
+		/*	}*/
+		/*	*/
+		/*	.header-navbar .navbar-header .navbar-brand .brand-logo {*/
+		/*		width: 51px;*/
+		/*	}*/
+		/*	*/
+		/*	.header-navbar .navbar-header .navbar-brand {*/
+		/*		margin-right: 0;*/
+		/*		padding: 5px 0;*/
+		/*	}*/
+		/*	*/
+		/*	.horizontal-menu .navbar-container .dropdown-menu .dropdown-submenu.show .dropdown-menu {*/
+		/*		overflow-y: visible;*/
+		/*	}*/
+		/*}*/
+		
+		html body {
+			background-color: #f4f5fa;
+		}
+		
+		@media (max-width: 767.98px)
+		{
+		    .navbar-light .navbar-header .navbar-nav .nav-link,
+		    .navbar-semi-light .navbar-header .navbar-nav .nav-link
+		    {
+		        color: #fff;
+		    }
+		}
+
+        .nav-login{
+	        position: relative;
+        }
+        /*.nav-login:after {*/
+        /*    content: "";*/
+        /*    background: #f1e34e;*/
+        /*    position: absolute;*/
+        /*    top: 25%;*/
+        /*    right: 0;*/
+        /*    height: 50%;*/
+        /*    width: 1px;*/
+        /*}*/
+        
+        @media (max-width: 767.98px) {
+            .header-navbar.navbar-with-menu .navbar-container {
+                background: #597092;
+            }
+        }
+	
+	</style>
+	
+	<style>
+		.tooltip {
+			display: block !important;
+			z-index: 10000;
+		}
+		
+		.tooltip .tooltip-inner {
+			background: rgba(65, 65, 65, 0.85);
+			color: white;
+			border-radius: 5px;
+			padding: 5px 10px 4px;
+		}
+		
+		.tooltip .tooltip-arrow {
+			width: 0;
+			height: 0;
+			border-style: solid;
+			position: absolute;
+			margin: 5px;
+			border-color: rgba(65, 65, 65, 0.85);
+			z-index: 1;
+		}
+		
+		.tooltip[x-placement^="top"] {
+			margin-bottom: 5px;
+		}
+		
+		.tooltip[x-placement^="top"] .tooltip-arrow {
+			border-width: 5px 5px 0 5px;
+			border-left-color: transparent !important;
+			border-right-color: transparent !important;
+			border-bottom-color: transparent !important;
+			bottom: -5px;
+			left: calc(50% - 5px);
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		.tooltip[x-placement^="bottom"] {
+			margin-top: 5px;
+		}
+		
+		.tooltip[x-placement^="bottom"] .tooltip-arrow {
+			border-width: 0 5px 5px 5px;
+			border-left-color: transparent !important;
+			border-right-color: transparent !important;
+			border-top-color: transparent !important;
+			top: -5px;
+			left: calc(50% - 5px);
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		.tooltip[x-placement^="right"] {
+			margin-left: 5px;
+		}
+		
+		.tooltip[x-placement^="right"] .tooltip-arrow {
+			border-width: 5px 5px 5px 0;
+			border-left-color: transparent !important;
+			border-top-color: transparent !important;
+			border-bottom-color: transparent !important;
+			left: -5px;
+			top: calc(50% - 5px);
+			margin-left: 0;
+			margin-right: 0;
+		}
+		
+		.tooltip[x-placement^="left"] {
+			margin-right: 5px;
+		}
+		
+		.tooltip[x-placement^="left"] .tooltip-arrow {
+			border-width: 5px 0 5px 5px;
+			border-top-color: transparent !important;
+			border-right-color: transparent !important;
+			border-bottom-color: transparent !important;
+			right: -5px;
+			top: calc(50% - 5px);
+			margin-left: 0;
+			margin-right: 0;
+		}
+		
+		.tooltip.popover .popover-inner {
+			background: #f9f9f9;
+			color: black;
+			padding: 24px;
+			border-radius: 5px;
+			box-shadow: 0 5px 30px rgba(black, .1);
+		}
+		
+		.tooltip.popover .popover-arrow {
+			border-color: #f9f9f9;
+		}
+		
+		.tooltip[aria-hidden='true'] {
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity .15s, visibility .15s;
+		}
+		
+		.tooltip[aria-hidden='false'] {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity .15s;
+		}
+		
+		.pagination .page-link {
+			color: #162953;
+			border: 1px solid #adb5bd;
+		}
+		
+		.pagination .page-item.active .page-link {
+			border-color: #162953;
+			background-color: #162953;
+		}
+		
+		.carousel-control-prev:hover, .carousel-control-prev:focus, .carousel-control-next:hover, .carousel-control-next:focus {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+		.carousel-indicators li {
+		    background-color: #f00;
+		}
+		
+		a{text-decoration: none}
+		a:hover{text-decoration: none}
+	</style>
+	<style>
+        .blockOverlay {
+            z-index: 1000 !important;
+        }
+        .blockElement {
+            z-index: 1000 !important;
+        }
+	</style>
+	<style>
+		.field-icon {
+		  top: 15px;
+		  right: 9px;
+		  position: absolute;
+		  z-index: 2;
+		}
+	</style>
+	<style>
+					</style>
+	<style>
+		@media (max-width: 767.98px)
+		{
+		    html body.fixed-navbar {
+			    padding-top: 6.57rem;
+			}
+			
+			.navbar-brand .brand-text {
+				font-size:18px;
+			}
+			.header-navbar .navbar-header .navbar-brand .brand-logo{
+				width:25px;
+			}
+		}
+	</style>
+	<style type="text/css">
+
+    .text-title {
+        font-size: 12px;
+    }
+
+    .no-top-margin {
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .text-center {
+        margin: auto;
+        text-align: center;
+    }
+
+    .text-italic {
+        font-style: italic;
+    }
+
+    .text-underline {
+        text-decoration: underline;
+    }
+
+    .font-weight-bold {
+        font-weight: bold;
+    }
+
+    .width-full {
+        width: 100%;
+    }
+
+    .width-content {
+        width: 80%;
+    }
+
+    .table-bordered {
+        border: 1px solid black;
+    }
+
+    .text-boxed {
+        border: 1px solid black;
+    }
+
+    .table-bordered-side {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    .table-bordered-left {
+        border-left: 1px solid black;
+    }
+
+    .table-bordered-top {
+        border-top: 1px solid black;
+    }
+
+    .table-bordered-bottom {
+        border-bottom: 1px solid black;
+    }
+
+    .bg-blue {
+        background-color: #8EAADB;
+    }
+
+    p, td {
+        /*line-height: unset;*/
+        font-size: 10px;
+    }
+
+    /*hr {*/
+    /*    border: none;*/
+    /*    height: 2px;*/
+    /*}*/
+
+</style>
+<style>
+    /*-----------------------------------------
+	// LETAKKAN CSS INTERNAL DISINI
+	//-----------------------------------------*/
+
+    /*.select2-container .select2-selection--single {
+		height: 37px !important;
+	  }*/
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+
+        #section-to-print, #section-to-print * {
+            visibility: visible;
+        }
+
+        #section-to-print {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+}
+    
+    .select2-container .select2-selection--single {
+        height: calc(4.75rem + 2px) !important;
+        border: 5px solid #1f5ebd !important;
+        background-color: #efefef;
+    }
+
+    .table-responsive {
+        overflow-x: initial;
+    }
+
+    .info-container {
+        width: 500px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .info-container {
+            width: 90%;
+        }
+    }
+
+    .select2-container {
+        width: 100% !important;
+        padding: 0;
+    }
+</style>
+<style>
+    .qr-container img {
+        width: 100%;
+    }
+</style>
+<style>
+  .select2-results__option {
+    padding: 2px;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 48px;
+      font-size: 20px;
+}
+</style>
+<style>
+#captchaModal .modal-dialog {
+    max-width: 500px;
+}
+
+#captchaModal img {
+    max-width: 100%;
+    height: auto;
+}
+
+#captcha_input {
+    font-family: 'Courier New', monospace;
+}
+
+#captchaModal .modal-header {
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+#captchaModal .modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+#captcha_error {
+    margin-top: 10px;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 4px;
+}
+</style>
+<style>
+.moving-border {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #dfdfdf 50%, transparent 50%),
+                linear-gradient(90deg, #dfdfdf 50%, transparent 50%),
+                linear-gradient(0deg, #dfdfdf 50%, transparent 50%),
+                linear-gradient(0deg, #dfdfdf 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 16px 4px, 16px 4px, 4px 16px, 4px 16px;
+    background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+    border-radius: 5px;
+    padding: 10px;
+    animation: dash 30s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+    }
+}
+</style>
+	<script>
+        window.BASEURL   = "https://form.undip.ac.id/";
+        window.ASSETSURL = "https://form.undip.ac.id/";
+	</script>
+<style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><style>@charset "UTF-8";@-webkit-keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-shown{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;box-shadow:0 0 .625em #d9d9d9;overflow-y:hidden}.swal2-popup.swal2-toast .swal2-header{flex-direction:row}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:initial;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon::before{display:flex;align-items:center;font-size:2em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon::before{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 .0625em #fff,0 0 0 .125em rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:2em;height:2.8125em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.25em;left:-.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:2em 2em;transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;-webkit-transform-origin:0 2em;transform-origin:0 2em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:showSweetToast .5s;animation:showSweetToast .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:hideSweetToast .2s forwards;animation:hideSweetToast .2s forwards}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:animate-toast-success-tip .75s;animation:animate-toast-success-tip .75s}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:animate-toast-success-long .75s;animation:animate-toast-success-long .75s}@-webkit-keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@-webkit-keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-shown{top:auto;right:auto;bottom:auto;left:auto;background-color:transparent}body.swal2-no-backdrop .swal2-shown>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-shown.swal2-top{top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-top-left,body.swal2-no-backdrop .swal2-shown.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-top-end,body.swal2-no-backdrop .swal2-shown.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-shown.swal2-center{top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-left,body.swal2-no-backdrop .swal2-shown.swal2-center-start{top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-end,body.swal2-no-backdrop .swal2-shown.swal2-center-right{top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom{bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom-left,body.swal2-no-backdrop .swal2-shown.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-bottom-end,body.swal2-no-backdrop .swal2-shown.swal2-bottom-right{right:0;bottom:0}.swal2-container{display:flex;position:fixed;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:10px;background-color:transparent;z-index:1060;overflow-x:hidden;-webkit-overflow-scrolling:touch}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-container.swal2-fade{transition:background-color .1s}.swal2-container.swal2-shown{background-color:rgba(0,0,0,.4)}.swal2-popup{display:none;position:relative;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem;box-sizing:border-box}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-popup .swal2-header{display:flex;flex-direction:column;align-items:center}.swal2-popup .swal2-title{display:block;position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-popup .swal2-actions{flex-wrap:wrap;align-items:center;justify-content:center;margin:1.25em auto 0;z-index:1}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm{width:2.5em;height:2.5em;margin:.46875em;padding:0;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent;cursor:default;box-sizing:border-box;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after{display:inline-block;width:15px;height:15px;margin-left:5px;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff;content:'';-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal}.swal2-popup .swal2-styled{margin:.3125em;padding:.625em 2em;font-weight:500;box-shadow:none}.swal2-popup .swal2-styled:not([disabled]){cursor:pointer}.swal2-popup .swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled:focus{outline:0;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(50,100,150,.4)}.swal2-popup .swal2-styled::-moz-focus-inner{border:0}.swal2-popup .swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-popup .swal2-image{max-width:100%;margin:1.25em auto}.swal2-popup .swal2-close{position:absolute;top:0;right:0;justify-content:center;width:1.2em;height:1.2em;padding:0;transition:color .1s ease-out;border:none;border-radius:0;outline:initial;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer;overflow:hidden}.swal2-popup .swal2-close:hover{-webkit-transform:none;transform:none;color:#f27474}.swal2-popup>.swal2-checkbox,.swal2-popup>.swal2-file,.swal2-popup>.swal2-input,.swal2-popup>.swal2-radio,.swal2-popup>.swal2-select,.swal2-popup>.swal2-textarea{display:none}.swal2-popup .swal2-content{justify-content:center;margin:0;padding:0;color:#545454;font-size:1.125em;font-weight:300;line-height:normal;z-index:1;word-wrap:break-word}.swal2-popup #swal2-content{text-align:center}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-radio,.swal2-popup .swal2-select,.swal2-popup .swal2-textarea{margin:1em auto}.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-textarea{width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;font-size:1.125em;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);box-sizing:border-box}.swal2-popup .swal2-file.swal2-inputerror,.swal2-popup .swal2-input.swal2-inputerror,.swal2-popup .swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-popup .swal2-file:focus,.swal2-popup .swal2-input:focus,.swal2-popup .swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-popup .swal2-file::-webkit-input-placeholder,.swal2-popup .swal2-input::-webkit-input-placeholder,.swal2-popup .swal2-textarea::-webkit-input-placeholder{color:#ccc}.swal2-popup .swal2-file:-ms-input-placeholder,.swal2-popup .swal2-input:-ms-input-placeholder,.swal2-popup .swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::-ms-input-placeholder,.swal2-popup .swal2-input::-ms-input-placeholder,.swal2-popup .swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::placeholder,.swal2-popup .swal2-input::placeholder,.swal2-popup .swal2-textarea::placeholder{color:#ccc}.swal2-popup .swal2-range{margin:1em auto;background:inherit}.swal2-popup .swal2-range input{width:80%}.swal2-popup .swal2-range output{width:20%;font-weight:600;text-align:center}.swal2-popup .swal2-range input,.swal2-popup .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-popup .swal2-input{height:2.625em;padding:0 .75em}.swal2-popup .swal2-input[type=number]{max-width:10em}.swal2-popup .swal2-file{background:inherit;font-size:1.125em}.swal2-popup .swal2-textarea{height:6.75em;padding:.75em}.swal2-popup .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:#545454;font-size:1.125em}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-radio{align-items:center;justify-content:center;background:inherit}.swal2-popup .swal2-checkbox label,.swal2-popup .swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-popup .swal2-checkbox input,.swal2-popup .swal2-radio input{margin:0 .4em}.swal2-popup .swal2-validation-message{display:none;align-items:center;justify-content:center;padding:.625em;background:#f0f0f0;color:#666;font-size:1em;font-weight:300;overflow:hidden}.swal2-popup .swal2-validation-message::before{display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center;content:'!';zoom:normal}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}.swal2-icon{position:relative;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;line-height:5em;cursor:default;box-sizing:content-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;zoom:normal}.swal2-icon::before{display:flex;align-items:center;height:92%;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-warning::before{content:'!'}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-info::before{content:'i'}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-question::before{content:'?'}.swal2-icon.swal2-question.swal2-arabic-question-mark::before{content:'؟'}.swal2-icon.swal2-success{border-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:3.75em 3.75em;transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 3.75em;transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;top:-.25em;left:-.25em;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%;z-index:2;box-sizing:content-box}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;top:.5em;left:1.625em;width:.4375em;height:5.625em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);z-index:1}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;height:.3125em;border-radius:.125em;background-color:#a5dc86;z-index:2}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.875em;width:1.5625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-progress-steps{align-items:center;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center;z-index:20}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#3085d6}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{width:2.5em;height:.4em;margin:0 -1px;background:#3085d6;z-index:10}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-show.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-hide.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-animate-success-icon .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-animate-error-icon{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-animate-error-icon .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}@-webkit-keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:initial!important}}</style><style> @-webkit-keyframes loadingoverlay_animation__rotate_right { to { -webkit-transform : rotate(360deg); transform : rotate(360deg); } } @keyframes loadingoverlay_animation__rotate_right { to { -webkit-transform : rotate(360deg); transform : rotate(360deg); } } @-webkit-keyframes loadingoverlay_animation__rotate_left { to { -webkit-transform : rotate(-360deg); transform : rotate(-360deg); } } @keyframes loadingoverlay_animation__rotate_left { to { -webkit-transform : rotate(-360deg); transform : rotate(-360deg); } } @-webkit-keyframes loadingoverlay_animation__fadein { 0% { opacity   : 0; -webkit-transform : scale(0.1, 0.1); transform : scale(0.1, 0.1); } 50% { opacity   : 1; } 100% { opacity   : 0; -webkit-transform : scale(1, 1); transform : scale(1, 1); } } @keyframes loadingoverlay_animation__fadein { 0% { opacity   : 0; -webkit-transform : scale(0.1, 0.1); transform : scale(0.1, 0.1); } 50% { opacity   : 1; } 100% { opacity   : 0; -webkit-transform : scale(1, 1); transform : scale(1, 1); } } @-webkit-keyframes loadingoverlay_animation__pulse { 0% { -webkit-transform : scale(0, 0); transform : scale(0, 0); } 50% { -webkit-transform : scale(1, 1); transform : scale(1, 1); } 100% { -webkit-transform : scale(0, 0); transform : scale(0, 0); } } @keyframes loadingoverlay_animation__pulse { 0% { -webkit-transform : scale(0, 0); transform : scale(0, 0); } 50% { -webkit-transform : scale(1, 1); transform : scale(1, 1); } 100% { -webkit-transform : scale(0, 0); transform : scale(0, 0); } } </style></head>
+
+
+<body class="vertical-layout vertical-content-menu 2-columns menu-expanded pace-done" data-open="click" data-menu="vertical-content-menu" data-col="2-columns"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+	<nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-light navbar-hide-on-scroll navbar-border navbar-shadow navbar-brand-center" style="background-color: #2d4c79;" data-nav="brand-center">
+      <div class="navbar-wrapper">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav flex-row">
+                        <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs is-active" href="https://form.undip.ac.id/makanansehat/pendaftaran#"><i class="ft-menu font-large-1"></i></a></li>
+            			<li class="nav-item">
+				<a class="navbar-brand" href="https://form.undip.ac.id/">
+					 <img class="brand-logo" alt="robust admin logo" src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/logo-undip-mail.png">
+					<h2 class="brand-text white">Universitas Diponegoro</h2></a>
+			</li>
+            <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile" style="position: absolute;right: 15px;"><i class="fa fa-ellipsis-v"></i></a></li>
+          </ul>
+        </div>
+        <div class="navbar-container content">
+          <div class="collapse navbar-collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav mr-auto float-left">
+	                                <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs white is-active" href="https://form.undip.ac.id/makanansehat/pendaftaran#"><i class="ft-menu"></i></a></li>
+	                        </ul>
+            <ul class="nav navbar-nav float-right">
+	            		            <li class="dropdown dropdown-user nav-item">
+			            <a class="dropdown-toggle nav-link dropdown-user-link white" href="https://form.undip.ac.id/makanansehat/pendaftaran#" data-toggle="dropdown">
+								<span class="avatar avatar-online">
+									<img src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/user.png" style="max-width: 50px;" alt="foto">
+									<i></i>
+								</span> <span class="user-name" style="margin-bottom: 1rem;">Hamka Muhammad</span> </a>
+			            <div class="dropdown-menu dropdown-menu-right">
+				            <!--				            <a class="dropdown-item" href="--><!--"><i class="icon-user"></i> profil</a>-->
+<!--				            <div class="dropdown-divider"></div>-->
+				            <a class="dropdown-item" href="https://form.undip.ac.id/auth/user/logout"><i class="ft-power"></i> Logout </a>
+			            </div>
+		            </li>
+	                        </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+
+<div class="app-content content" id="app">
+  <div class="content-wrapper">
+    <div class="content-header row">
+    </div>
+	  
+	  	  <div class="main-menu menu-static menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+		<div class="main-menu-content">
+			<ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+								<li class="nav-item " rel="https://form.undip.ac.id/">
+					<a class=" nav-link " href="https://form.undip.ac.id/"><i class="fa icon-home"></i>
+						<span class="menu-title">Home</span>
+					</a>
+				</li>
+				<li class="nav-item " rel="https://form.undip.ac.id/zoomevent">
+					<a class=" nav-link " href="https://form.undip.ac.id/zoomevent"><i class="fa fa-video-camera"></i>
+						<span class="menu-title">Zoom Event</span>
+					</a>
+				</li>
+							
+	            </ul>
+	          </div>
+	        </div>
+	  	<div class="content-body" style="height: 100% !important;">
+	
+
+<!--<div class="app-content --><!--?//= (@$container_width == TRUE) ? 'container' : 'container-fluid' ?--><!-- center-layout mt-2"-->
+<!--     style="margin-bottom: 50px;"  id="app">-->
+<!--	<div class="content-wrapper">-->
+
+		<!-- <div class="content-header row">
+		  <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+			<h3 class="content-header-title mb-0 d-inline-block">Light Layout</h3>
+			<div class="row breadcrumbs-top d-inline-block">
+			  <div class="breadcrumb-wrapper col-12">
+				<ol class="breadcrumb">
+				  <li class="breadcrumb-item"><a href="index.html">Home</a>
+				  </li>
+				  <li class="breadcrumb-item"><a href="#">Page Layouts</a>
+				  </li>
+				  <li class="breadcrumb-item active">Light Layout
+				  </li>
+				</ol>
+			  </div>
+			</div>
+		  </div>
+		  <div class="content-header-right col-md-4 col-12">
+			<div class="btn-group float-md-right">
+			  <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-settings mr-1"></i>Action</button>
+			  <div class="dropdown-menu arrow"><a class="dropdown-item" href="#"><i class="fa fa-calendar mr-1"></i> Calender</a><a class="dropdown-item" href="#"><i class="fa fa-cart-plus mr-1"></i> Cart</a><a class="dropdown-item" href="#"><i class="fa fa-life-ring mr-1"></i> Support</a>
+				<div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fa fa-cog mr-1"></i> Settings</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+ -->
+
+
+
+<!-- Content -->
+
+<div class="row">
+	<div class="col-md-12">
+		<a href="https://form.undip.ac.id/makanansehat/pendaftaran" class="btn btn-square btn-info">Formulir</a>
+		<a href="https://form.undip.ac.id/makanansehat/pendaftaran/riwayat" class="btn btn-square btn-primary white">Riwayat Pendaftaran</a>
+	</div>
+</div>
+
+<section id="description" class="card">
+	<div class="card-header text-left ">
+		<h1 class=""> Formulir Pendaftaran Makanan Sehat</h1>
+	</div>
+	<div class="card-content">
+		<div class="card-body">
+			
+			<div class="row">
+<!--				<div class="offset-1 col-md-10 p-2 bg-grey bg-lighten-2" style="border-style: dashed !important;border-width: 2px !important;">-->
+<!--					Formulir untuk pendafataran makanan sehat-->
+<!--				</div>-->
+				<div class="col-md-12">
+										<hr>
+																	
+						<form id="reg_ddart_covid" action="https://form.undip.ac.id/makanansehat/pendaftaran/save" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="ci_csrf_token" value="">
+							<h4 class="border-bottom-black" style="padding: 5px;"><i class="icon-user"></i> Identitas Diri</h4>
+							<div class="px-3 pt-3">
+																<div class="form-group" id="status_wrapper">
+									<label for="status" class="text-capitalize font-weight-bold">status</label>
+									<input placeholder="status" type="text" id="status" name="status" class="form-control" value="Aktif" readonly="" required="">
+								</div>
+								
+																<div class="form-group" id="nama_wrapper">
+									<label for="nama" class="text-capitalize font-weight-bold">nama</label>
+									<input placeholder="nama" type="text" id="nama" name="nama" class="form-control" value="Hamka Muhammad" readonly="" required="">
+								</div>
+								
+																<div class="form-group" id="identity_wrapper">
+									<label for="identity" class="text-capitalize font-weight-bold">identity (NIM)</label>
+									<input placeholder="identity" type="text" id="identity" name="identity" class="form-control" value="21120124120038" readonly="" required="">
+								</div>
+								
+								
+																<div class="form-group" id="nama_prodi_wrapper">
+									<label for="nama_prodi" class="text-capitalize font-weight-bold">nama prodi</label>
+									<input placeholder="nama prodi" type="text" id="nama_prodi" name="nama_prodi" class="form-control" value="Teknik Komputer S1" readonly="" required="">
+								</div>
+								
+																<div class="form-group" id="nama_fakultas_wrapper">
+									<label for="nama_fakultas" class="text-capitalize font-weight-bold">nama fakultas</label>
+									<input placeholder="nama fakultas" type="text" id="nama_fakultas" name="nama_fakultas" class="form-control" value="TEKNIK" readonly="" required="">
+								</div>
+								
+																<div class="form-group" id="mobile_phone_wrapper">
+									<label for="mobile_phone" class="text-capitalize font-weight-bold">MOBILE PHONE</label>
+									<input placeholder="mobile phone" type="text" id="mobile_phone" name="mobile_phone" class="form-control" value="081219861695" readonly="">
+								</div>
+								
+								
+								<h4 class="border-bottom-black" style="padding: 5px;"><i class="fa fa-table"></i> Pilih jadwal sesuai dengan ketersediaan kuota</h4>
+								
+								<p class="font-medium-2 p-3 bg-grey bg-lighten-3 border-red">
+									<span><i class="fa fa-exclamation-triangle red"></i> Pendaftaran hanya dapat dilakukan tiap hari mulai pukul:</span>
+									<br>
+									<b>10:00 WIB</b>
+									<br>
+									<span>hingga</span>
+									<br>
+									<b>11:00 WIB</b>
+								</p>
+								
+																<div class="px-3 pt-3">
+																											<div class="form-group">
+                                                            <h4><i class="fa fa-info-circle blue"></i> Info Update:</h4>
+                                        <p class="font-medium-3">
+                                            <span class="black">Opsi pendaftaran hari ini dan tanggal berikutnya akan muncul di hari yang sama pada pukul <u class="red">10:00:00</u></span>.
+                                            <br>
+                                            <span class="black"><a href="https://form.undip.ac.id/makanansehat/pendaftaran"><u class="deep-orange">Refresh Halaman</u></a> untuk mengupdate halaman</span>.
+                                            <br>
+                                            <br>
+
+                                            Jadwal berikutnya:
+                                            <br>
+                                            </p><ul>
+                                                                                            
+                                                    
+                                                    
+                                                
+
+											                                                
+                                                    
+                                                    
+                                                
+
+											                                                
+                                                    
+                                                    
+                                                
+
+											                                                
+                                                    
+                                                    
+                                                
+
+											                                                
+                                                
+
+											                                                
+                                                
+
+											                                                
+                                                
+
+											                                                
+                                                
+
+											                                                
+                                                
+
+											                                                
+                                                
+
+											                                                
+                                                
+
+											                                                
+                                                
+
+											                                            </ul>
+                                        <p></p>
+
+                                        <div class="moving-border p-5">
+										<select name="tanggal" id="tanggal" class="select2 form-control select2-hidden-accessible" required="" tabindex="-1" aria-hidden="true" data-select2-id="tanggal">
+											<option value="" data-select2-id="40">- Pilih Tanggal-</option>
+                      
+											                                                
+                                                    
+                                                        <option value="YjM1ZGI5Yjc5NTJkMGVlYjYyNDZjZWU1MjJmMGQ2NDRkZDRjMWNiYjgzZTk2MzJmMmIxNmU0MzIzMjU4ODFmODdhNzg0Y2YzMWRjZTVjMDIxZTU3MjE0MDg5ZGY1YzViYmUwNTMxMTczMGE1OGYzOTIzNDQ4MTEzN2NjOWFhODRSUEplRHB5cDBjZ25rRXNUWVd1ai93PT0~" disabled="">
+
+                                                            Kamis, 13 Agustus 2026 - Lokasi
+                                                            <strong>Auditorium Imam Bardjo, S.H.</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                    
+                                                    
+                                                
+
+											                                                
+                                                    
+                                                        <option value="YzgzNGQ4OGNlNTYxYzE3ZjU2YTg4NjFiNTJkMWEwYzdmOGQ3OWNiOTFhN2U4OGYyYzY3MjZmZGEzZjhkN2NiY2U5ZjgwMjM5NTQ4NTM5MDdmNDUxMmM4YzE5MzdhOTkwODc5M2UxNGI4ZWNiZjRiMzRiOGViZDBhOGI3MjNkNjd2bDdua05pSG5BenBseFFwY0hBalpRPT0~" disabled="">
+
+                                                            Kamis, 13 Agustus 2026 - Lokasi
+                                                            <strong>Pendopo FSM (seberang pintu masuk FPIK)</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                    
+                                                    
+                                                
+
+											                                                
+                                                    
+                                                        <option value="M2M5ZTc3ZWQ5YTc2NDg1MTBjMjc4M2RjMGJmOWNlN2VhODUwYjMyMDQwOTBiMTQ0OWFhNGI0YTMzY2E5MmJjMWM2YmQwNTQ4NTVjYTVlNjc1MjIzNWFhNGZjYTEzZDFlZmVkM2JiMTQ5ZTE3M2RjZWIzYWIyMTAzNDRmZDRhZDJzbEhHeVpKbDNKQzA0TXNRYnc5bllRPT0~" disabled="">
+
+                                                            Kamis, 13 Agustus 2026 - Lokasi
+                                                            <strong>Halaman Parkir Gedung SA-MWA</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                    
+                                                    
+                                                
+
+											                                                
+                                                    
+                                                        <option value="OWM0MzUzNjE4MzhmZGExZmYyNWM1NzY4MTJhNTU1MzE5NWQyMmQ0MjhhZDlkN2I5NmRhNDg5N2E3NzkxMGQyYjE2ZjFjNTM3YmQzZWUzMDFmMDRkYzAyZjUxMGVmM2Y2ZmVhYmRmMTRjYjFiYjU4N2JkZGYzNzFmMDk4ODE3MmV1MHd2RXBxWWNIbEpNNThjT0xuYUFnPT0~" disabled="">
+
+                                                            Kamis, 13 Agustus 2026 - Lokasi
+                                                            <strong>Student Center</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                    
+                                                    
+                                                
+
+											                                                                                                        <option value="NTEyZmU5Mzc1NTAzY2E1OTEyYjk4MmYwMzM5MzUyMGJjZmRhM2I0ZTA5NWQwNTZkY2YzYmM1YThjNWUyMmVjMDBjM2RkMzk5YmIzMTVlZjJmNGQyYWJkNjM5ZjM4NDk2ZjRiMjBmNzZiNjZjYzQzMzlmYjAxMzFmNDRlMWM2YjNOMTVUbHVwV3RVY3U4aVBlbFphTEhRPT0~" disabled="">
+
+                                                            Rabu, 12 Agustus 2026 - Lokasi
+                                                            <strong>Auditorium Imam Bardjo, S.H.</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+											                                                                                                        <option value="YWVjNjFkNmI3ZDY1ZmIxMmQ3ZjQ1Y2Y4ZmZhMDliMzA1YmY4NjBiZDA4ZmFjZTZlNzVkNWE1NDMxYTcwZWQ0NWQ0MWVjNzFmMDI1NjAxZWVlN2FhOTNiN2Q5ZDE4NDk5ZDcyMTM0NDdiN2Q1ZWJkYTBhZWUwMTI4NTAyZjdjMmVJTGVBS1VFcWZwVzJPR1JRc2NWM3FnPT0~" disabled="">
+
+                                                            Rabu, 12 Agustus 2026 - Lokasi
+                                                            <strong>Pendopo FSM (seberang pintu masuk FPIK)</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+											                                                                                                        <option value="NzI4ZjQyNDA1OWMxMTZiZjYzMzUwOGNjMTJjODI2N2ZkN2UzMTZlMTE4NmNmZDU3YmNhNTI1NGZiZDgzZGQxZDUwMTU5ODMyNTVjOTRlNzM3Yzg0ZjU3MTIyNzcwNjRlYTdiNjdlYTZjYjQ4ZmRhMmQ1OGUyMWI3MWI4NTk4OWZWbFRMZ3JKdVVvTXEwVnpzVUJsMFdBPT0~" disabled="">
+
+                                                            Rabu, 12 Agustus 2026 - Lokasi
+                                                            <strong>Halaman Parkir Gedung SA-MWA</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+											                                                                                                        <option value="M2Y2ZTZkODM0NWE2NTYyYThlMGFjYWFlNDU5NzZlMzY0YWFlZTU4NmRmZDUzNGZmMzA1YTEyYWFiODRhMDlhMWMxZTk2MWE3NTBlMDFkN2Q1Y2Y0YWQ5MWZjOGViYmViMTE3YWIxZDBjMDJhNTQ4ZjM2MmY5ZmI0ZjUwZDEwM2ExZEhHalZFVDI1dXJnZ0RRN05LazRRPT0~" disabled="">
+
+                                                            Rabu, 12 Agustus 2026 - Lokasi
+                                                            <strong>Student Center</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+											                                                                                                        <option value="Mjg5ODA5YjliNzI5MGRmM2U3ODk4YTRiZWEwYjM0MmRlM2Q2ODYxYmM2MDE0NTVjYTlkMWRmOGZjMjQxOTczNWMwNmY4N2Q5NTQ1Mjk4YjhlYmI1ZTE4NTBjNTk5YmUwOGVhZmZmMjRmN2Q4NjQxZjhhNDU1YWJiYzJmNmVmNjZXTnV6S0hNbXFxZ1lGK3U2ZENOMGN3PT0~" disabled="">
+
+                                                            Selasa, 11 Agustus 2026 - Lokasi
+                                                            <strong>Auditorium Imam Bardjo, S.H.</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+											                                                                                                        <option value="YzUzNmFiMTUyODdmYjU4ZDYzMjRkOTYzMDI4YWZjNDQzNjllYTBmODBhNmMyN2NkY2FjMGIyYzIzZmYzNDdhZGI3NDJiYzk4NWIwZGYyM2QwMzgzZjgyNDc3NGE0MDM4ZDc1MTQ4OTZlOGY2YjU2OThjODUzNmU3ZjVhZTZjNDBQTWpaTlpWbmNKZGt2S2NDNW5vcytBPT0~" disabled="">
+
+                                                            Selasa, 11 Agustus 2026 - Lokasi
+                                                            <strong>Pendopo FSM (seberang pintu masuk FPIK)</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+											                                                                                                        <option value="NzAyMWE4NjQ1ZDFlOWE1OGE0MDk1YzdkNzE3MTIxNWFmMzk3YjUzMDNjNTA3Njc4YWI4YzkzNzlkZjc1ZTIxYTM0OTE0MTcyNTc5MDM3OTAyNmQxZjlkMDVmNThmM2M2ZmRkOGJiYTY3NTRmNmI2M2Q1Mzc1YmNhYWI2MmUxY2Q5eDFZS01GcjJpdERPalEwUVRhZStBPT0~" disabled="">
+
+                                                            Selasa, 11 Agustus 2026 - Lokasi
+                                                            <strong>Halaman Parkir Gedung SA-MWA</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+											                                                                                                        <option value="NDg3OTc1NjMyZTMwOTI5ODM5NTQ5YWViZDMyNDc2N2ZhZmIzYTczYjE4NDI1ZDZjNjY2ZTVkM2E5ZjNkZTEyMmM3ZDZhYzU0NDc3ZjU3ODMzOGEzM2RjNDIxYTI3MGIzZTM2ODUzMjU1NzY3NjRkN2ZmZmQ4NjQzOWFmYTlmNTQzTm8zZ3dqOWgvYUxRSDdaUlJuRWR3PT0~" disabled="">
+
+                                                            Selasa, 11 Agustus 2026 - Lokasi
+                                                            <strong>Student Center</strong> (sisa kuota 0)
+
+                                                            
+                                                                                                                            <b class="red">##sudah lewat jadwal</b>
+                                                            
+                                                            
+                                                                                                                    </option>
+                                                
+
+																					</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="39" style="width: 893.267px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-tanggal-container"><span class="select2-selection__rendered" id="select2-tanggal-container" role="textbox" aria-readonly="true" title="- Pilih Tanggal-">- Pilih Tanggal-</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        </div>
+									</div>
+								
+								
+									<div class="row">
+										<div class="col-md-12">
+											<div class="cf-turnstile" data-sitekey="0x4AAAAAABgsQ8cRFJisCMGQ"><div><template shadowrootmode="closed"><iframe src="https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/68xwm/0x4AAAAAABgsQ8cRFJisCMGQ/auto/fbE/new/normal?lang=auto" allow="cross-origin-isolated; fullscreen; autoplay; keyboard-map; gamepad; xr-spatial-tracking" sandbox="allow-same-origin allow-scripts allow-popups" id="cf-chl-widget-68xwm" tabindex="0" title="Widget containing a Cloudflare security challenge" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; overflow: hidden; width: 300px; height: 65px;"></iframe></template><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-68xwm_response"></div></div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-md-12">
+										<p>
+											Dengan menyimpan formulir ini berarti,
+											<br>
+											• Data dan informasi saya sampaikan diatas adalah benar dan sesuai dengan kehendak saya pribadi.
+											<br>
+											• Kesalahan data diatas merupakan tanggung jawab saya pribadi.
+										</p>
+									</div>
+								</div>
+								<hr>
+								<div class="form-action text-right">
+									
+									<span class="red">*Koreksi sekali lagi data anda sebelum memproses pendaftaran. <br> Data tersimpan <b>tidak dapat diubah</b>.</span>
+									<br>
+									<button type="button" id="btn_submit_pendaftaran" class="btn btn-square btn-indigo"><i class="ft-save"></i> Simpan &amp; Daftar
+									</button>
+								</div>
+						
+										
+									</div></form>
+			</div>
+		</div>
+	</div>
+</div></section>
+
+<!-- Modal Captcha -->
+<div class="modal fade" id="captchaModal" tabindex="-1" role="dialog" aria-labelledby="captchaModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-primary">
+				<h4 class="modal-title white" id="captchaModalLabel"><i class="fa fa-shield"></i> Verifikasi Keamanan</h4>
+			</div>
+			<div class="modal-body">
+				<div class="text-center mb-3">
+					<p class="font-medium-2">Silakan masukkan kode keamanan di bawah ini untuk melanjutkan pendaftaran</p>
+				</div>
+				<div class="form-group text-center">
+					<div class="mb-2" style="display: inline-block;">
+						<img id="captcha_image" src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/captcha_image" alt="Captcha" style="border: 2px solid #ddd; border-radius: 5px; display: block; margin: 0 auto;">
+					</div>
+					<div class="mt-2">
+						<button type="button" id="btn_refresh_captcha" class="btn btn-sm btn-warning" title="Refresh Captcha">
+							<i class="fa fa-refresh"></i> Muat Ulang Captcha
+						</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="captcha_input" class="font-weight-bold">Masukkan Kode Captcha:</label>
+					<input type="text" id="captcha_input" class="form-control form-control-lg text-center" placeholder="Ketik kode di atas" autocomplete="off" style="letter-spacing: 3px; font-size: 20px; text-transform: uppercase;">
+					<small class="form-text text-muted">Huruf besar/kecil tidak dibedakan</small>
+				</div>
+				<div id="captcha_error" class="alert alert-danger" style="display: none;"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" id="btn_cancel_captcha"><i class="fa fa-times"></i> Batal</button>
+				<button type="button" class="btn btn-success" id="btn_verify_captcha"><i class="fa fa-check"></i> Verifikasi &amp; Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--/ Content --><!--/ HTML Markup -->
+        <!-- </div> -->
+      </div>
+  </div>
+</div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+<footer class="footer footer-static footer-light navbar-border">
+    <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2 container center-layout">
+        <span class="float-md-left d-block d-md-inline-block">Undip  © 2026            <a class="text-bold-800 grey darken-2" href="https://form.undip.ac.id/makanansehat/pendaftaran#" target="_blank">Undip </a>, All rights reserved.
+        </span>
+        <span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">
+          Hand-crafted &amp; Made with <a href="https://form.undip.ac.id/makanansehat/pendaftaran#" class="pink"><i class="ft-heart pink"></i></a>
+        </span>
+    </p>
+</footer>
+
+<!-- Mainly scripts -->
+
+
+<!-- ===== START GLOBAL MODAL DIALOG ===== -->
+<div class="modal no-slide web_modal_dialog" tabindex="-1" role="dialog" id="web_global_modaldlg">
+	<div class="modal-dialog" role="document">
+		<div class="web_dialog_loader">
+			<img src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/loader-32.gif" alt="Loading..."> Memuat...
+		</div>
+		<div class="modal-content web_dialog_main"></div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- ===== END MODAL ====== -->
+
+
+<!-- Overlay -->
+<div id="global_overlay" style="display:none;">
+	<div id="global_ov_box">
+		<div id="global_ov_msg">Sedang memproses... Mohon tunggu...</div>
+		<img src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/loader-32.gif" alt="Loading...">
+	</div>
+</div>
+
+<!-- BEGIN VENDOR JS-->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/vendors.min.js.download"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/jquery.sticky.js.download"></script>
+<!--<script src="--><!--?//= base_url() ?--><!--template_assets/robust/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>-->
+<!--<script src="--><!--?//= base_url() ?--><!--template_assets/robust/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>-->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/toastr.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/select2.full.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/jquery.steps.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/moment-with-locales.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/daterangepicker.js.download"></script>
+<!--<script src="--><!--?//= base_url() ?--><!--template_assets/robust/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>-->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/jquery.validate.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/additional-methods.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/headroom.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/raphael-min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/morris.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/chart.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/jquery-jvectormap-2.0.3.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/jquery-jvectormap-world-mill.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/moment.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/underscore-min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/clndr.min.js.download"></script>
+<!-- <script src="https://form.undip.ac.id/template_assets/robust/app-assets/vendors/js/charts/echarts/echarts.js"></script> -->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/unslider-min.js.download"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN ROBUST JS-->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/app-menu.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/app.js.download"></script>
+ <script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/icheck.min.js.download"></script>
+ <script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/checkbox-radio.js.download"></script>
+
+<!-- END ROBUST JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<!--<script src="--><!--?//= base_url() ?--><!--template_assets/robust/app-assets/js/scripts/forms/select/form-select2.js"></script>-->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/customizer.js.download"></script><!-- END PAGE LEVEL JS-->
+<!-- BEGIN INTERNAL APP -->
+
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/loadingoverlay.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/moment-with-locales.min(1).js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/sweetalert2.all.min.js.download"></script>
+
+<!--<script src="--><!--?//= base_url() ?--><!--assets/app/js/plugins/tinymce/js/tinymce/tinymce.min.js"></script>-->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/tinymce.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/global.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/ui_loader.js.download"></script>
+<!-- VUE JS -->
+
+<!--<script src="--><!--?//= base_url() ?--><!--assets/app/js/vue/app.js?v=--><!--?//= time() ?--><!--"></script>-->
+
+<!-------------------------------------------
+  // LETAKKAN JS EXTERNAL DISINI
+  //------------------------------------------->
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/jquery.repeater.min.js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/tinymce.min(1).js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/select2.full.min(1).js.download"></script>
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/form-select2.js.download"></script>
+
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/qrcode.min.js.download"></script>
+
+<script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/api.js.download" async="" defer=""></script>
+
+<!-- BEGIN INNER PAGE LEVEL JS -->
+ <script src="./SSO Form - Formulir Pendaftaran Makanan Sehat_files/datatables.min.js.download"></script>
+<!--<script src="--><!--?//= base_url() ?--><!--template_assets/robust/app-assets/js/scripts/tables/datatables/datatable-basic.js"></script>-->
+
+
+<script type="text/javascript">
+
+    /* INSERT GLOBAL JS */
+
+    $(document).ready(function() {
+
+    	$('#popup_modal').modal('show');
+
+        if (typeof init_page_level == 'function') {
+
+            /**
+             * call init page level function
+             */
+
+            init_page_level();
+        }
+
+
+        /**
+         * triger the icheck in the first time
+         */
+        //   $('input[type=checkbox], input[type=radio]').iCheck({
+        //     checkboxClass : 'icheckbox_square-blue',
+        //     radioClass    : 'iradio_square-blue'
+        // });
+
+
+        $("input[type='text'][name='is_active']").remove();
+        $(".select-all-none").remove();
+		
+        _reinit_select2();
+        // $('.select2-multiple').select2();
+        
+        $(".select2-readonly").select2({disabled:'readonly'});
+
+                        // var url      = window.location.href;
+        // $(".the-menu").find('li').each(function(i,item){
+        //   var rel = $(this).attr('rel');
+        //       $(this).addClass('active open');
+
+        //   // console.log(url);
+        //   if(rel != 'https://form.undip.ac.id/'){
+
+        //       console.log(url+rel + '=' +url.includes(rel));
+        //       console.log($(this).attr('class'));
+        //     if(url.includes(rel)){
+        //       $(this).addClass('active open');
+
+        //       $(this).parents('li').each(function(i,item){
+        //         $(this).addClass('open');
+        //       });
+        
+        //     }
+
+        //   }
+
+        // });
+    });
+
+
+    /**
+     * triggering grocery crud checkbox select all
+     */
+    // $(document).on('ifChanged','.select-all-none', function(event) {
+    //     if(event.target.checked){
+    //         $(this).prop('checked', true);
+    //         $('.select-row').prop('checked', true);
+
+    //     }else{
+    //         $(this).prop('checked', false);
+    //         $('.select-row').prop('checked', false);
+    //     }
+    //     $(this).trigger("change", event);
+    //     // console.log(event);
+    //     $('.select-row').iCheck('update');
+
+    // });
+
+    // $(document).on('change','.select-all-none', function() {
+    //     $(this).trigger('click');
+    // });
+
+    function setContentMenuHeight(){
+            $('.content-body').removeAttr('style');
+        
+            var menuHeight = $('.main-menu').height();
+            var bodyHeight = $('.content-body').height();
+            if(bodyHeight<menuHeight){
+                $('.content-body').css('height',menuHeight);
+            }
+        }
+
+    /**
+     * trigger the icheck in avery ajax call in the page
+     */
+    $(document).ajaxStop(function (e) {
+        setContentMenuHeight();
+        unblock_div();
+          // 0 === $.active
+            // $.LoadingOverlay("hide");
+            // console.log(e);
+            // $('input[type=checkbox], input[type=radio]').trigger('icheck');
+            // $('input[type=checkbox], input[type=radio]').iCheck({
+            //     checkboxClass : 'icheckbox_square-blue',
+            //     radioClass    : 'iradio_square-blue'
+            // });
+            $('[data-toggle="tooltip"]').tooltip();
+            $("input[type='text'][name='is_active']").remove();
+            $(".select-all-none").remove();
+     });
+
+    $(document).ajaxStart(function(){
+        block_div();
+
+        // $.LoadingOverlay("show");
+
+    });
+
+    $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
+        _web_ui_htmlalert( jqxhr.responseText, _reload_page , jqxhr.statusText, 'error');
+    });
+
+    function _reinit_select2(){
+        // $('.select2').select2("destroy");
+        $('.select2, .select2-multiple').each(function (i, obj) {
+            if ($(obj).hasClass("select2-hidden-accessible")) {
+                // console.log(i +'destroyed');
+                $(obj).select2('destroy');
+            }
+        });
+        $('.select2').select2();
+        $('.select2-multiple').select2({
+	        closeOnSelect: false
+        });
+        
+    }
+
+    function _reinit_tooltip(){
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+    
+    function _reload_page(){
+        location.reload();
+    }
+
+    /**
+     *
+     * seksi untuk pemanggilan tradisional javascript
+     * silahkan di seksi dibawah ini
+     *
+     */
+
+
+    /**
+     * fungsi print sebuah div (membawa external css)
+     *
+     * @class      PrintArea (name)
+     * @param      {selector}  id     Print Div Selector
+     */
+
+      function PrintArea(id,document_name='untitled',size='a4',mode='landscape',inclue_all_ext_css = false,addtlStyle = '') { // added by ARIEF jgn dibuang gk ada backup_script nya
+
+            var html = "";
+
+            if (inclue_all_ext_css){
+                $('link').each(function() { // find all <link tags that have
+                    if ($(this).attr('rel').indexOf('stylesheet') !=-1) { // rel="stylesheet"
+                        html += '<link rel="stylesheet" href="'+$(this).attr("href")+'" />';
+                    }
+                });
+            }
+
+            html += '<style>'+
+                        // 'table tbody th{'+
+                        //     'border : 0.3px solid #000;border-collapse: collapse;'+
+                        // '}'+
+                        '.row{padding:0px;margin:0px;}'+
+                        '@media print and (width: 21cm) and (height: 29.7cm) {'+
+                             '@page {'+
+                                'margin: none;'+
+                             '}'+
+                        '}'+
+                        '@page {'+
+                            'size: '+size+' '+mode+';'+
+                            'margin: none;'+
+                        '}'+
+                        // '.table th, .table td {'+
+                        //     'line-height: 18px;'+
+                        // '}'+
+                        '</style>';
+			
+			html += addtlStyle;
+            // var scrpt = '/script';
+            html += '<head>';
+            html += '<title>FORM - '+document_name+'</title>';
+            html += '</head>';
+            html += '<body onload="window.focus(); window.print(); window.close();">'+$("#"+id).html()+'</body>';
+            html += '\x3Cscript src="https://form.undip.ac.id/template_assets/robust/app-assets/vendors/js/vendors.min.js">\x3C/script>';
+            html += '\x3Cscript type="text/javascript">'+
+                        '$(".remove_on_print").remove();'+
+                        '$(".combobox-container,.input-group").remove();'+
+                    '\x3C/script>';
+            // html += '<script type="text/javascript">'+
+            //                  'window.onfocus = function () { window.close(); }'+
+            //              '<'+scrpt+'>';
+            var w = window.open("","print");
+            if (w) {
+                w.document.write(html);
+                // w.document.write(html);
+                w.document.close();
+            // return true;
+            }
+
+        }
+
+
+
+    var mx = 0;
+
+    $(".drag").on({
+      mousemove: function(e) {
+        var mx2 = e.pageX - this.offsetLeft;
+        console.log(mx2);
+        if(mx) this.scrollLeft = this.sx + mx - mx2;
+      },
+      mousedown: function(e) {
+        this.sx = this.scrollLeft;
+        mx = e.pageX - this.offsetLeft;
+      }
+    });
+
+    $(document).on("mouseup", function(){
+      mx = 0;
+    });
+
+    //########################### Generate Pegawai
+    $(document).on('click', '.master_unit_id', function(){
+    	if ($(this).prop('checked')){
+    		$('.unit_id').prop('checked', true);
+    	}else{
+    		$('.unit_id').prop('checked', false);
+    	}
+    	ajax_unit();
+    	cek_checked();
+    });
+
+    $(document).on('click', '.master_subunit_id', function(){
+    	if ($(this).prop('checked')){
+    		$('.subunit_id').prop('checked', true);
+    	}else{
+    		$('.subunit_id').prop('checked', false);
+    	}
+    	ajax_subunit();
+    	cek_checked();
+
+    });
+
+    $(document).on('click', '.master_sub_subunit_id', function(){
+    	if ($(this).prop('checked')){
+    		$('.sub_subunit_id').prop('checked', true);
+    	}else{
+    		$('.sub_subunit_id').prop('checked', false);
+    	}
+    	ajax_sub_subunit();
+    	cek_checked();
+
+    });
+
+    $(document).on('change', '.unit_id', function(){
+    	ajax_unit();
+    });
+
+    $(document).on('change', '.subunit_id', function(){
+    	ajax_subunit();
+    });
+
+    $(document).on('change', '.sub_subunit_id', function(){
+    	cek_checked();
+    });
+
+  	//status_kepeg
+  	$(document).on('click', '.master_status_kepeg', function(){
+  		if ($(this).prop('checked')){
+  			$('.status_kepeg').prop('checked', true);
+  		}else{
+  			$('.status_kepeg').prop('checked', false);
+  		}
+
+  		$('.status_kepeg').trigger('change');
+  	});
+
+  	$(document).on('change', '.status_kepeg', function(){
+  		cek_checked();
+  	});
+
+	//status_aktif
+	$(document).on('click', '.master_status_aktif', function(){
+		if ($(this).prop('checked')){
+			$('.status_aktif').prop('checked', true);
+		}else{
+			$('.status_aktif').prop('checked', false);
+		}
+
+		$('.status_aktif').trigger('change');
+	});
+
+	$(document).on('change', '.status_aktif', function(){
+		cek_checked();
+	});
+
+	//jns_peg
+	$(document).on('click', '.master_jns_peg', function(){
+		if ($(this).prop('checked')){
+			$('.jns_peg').prop('checked', true);
+		}else{
+			$('.jns_peg').prop('checked', false);
+		}
+
+		$('.jns_peg').trigger('change');
+	});
+
+	$(document).on('change', '.jns_peg', function(){
+		cek_checked();
+	});
+
+    //jabatan
+    $(document).on('click', '.master_jabatan', function(){
+    	if ($(this).prop('checked')){
+    		$('.jabatan').prop('checked', true);
+    	}else{
+    		$('.jabatan').prop('checked', false);
+    	}
+
+    	$('.jabatan').trigger('change');
+    });
+
+    $(document).on('change', '.jabatan', function(){
+    	cek_checked();
+    });
+
+    $(document).on('click', '.master_jabatan_jfu, .master_jabatan_jft, .master_jabatan_struktural', function(){
+        jns_jab = $(this).attr('data-jns-jab');
+        // alert(jns_jab);
+        if ($(this).prop('checked')){
+            $('.jabatan_'+jns_jab).prop('checked', true);
+        }else{
+            $('.jabatan_'+jns_jab).prop('checked', false);
+        }
+
+        $('.jabatan_'+jns_jab).trigger('change');
+    });
+
+	//tutam
+	$(document).on('click', '.master_tutam', function(){
+		if ($(this).prop('checked')){
+			$('.tutam').prop('checked', true);
+		}else{
+			$('.tutam').prop('checked', false);
+		}
+
+		$('.tutam').trigger('change');
+	});
+
+	$(document).on('change', '.tutam', function(){
+		cek_checked();
+	});
+
+	function ajax_unit(){
+		var data = $('.unit_id').serializeArray();
+
+		if (data.length > 0) {
+			$.ajax({
+				url: "https://form.undip.ac.id/penerima/pegawai/get_subunit_opt",
+				method:"POST",
+				data:data,
+				success:function(data){
+					$('#subunit_opt').remove();
+					$('#sub_subunit_opt').remove();
+					$('#unit_opt').after(data);
+
+                    $('#filter_subunit_id_master').remove();
+                    $('#filter_sub_subunit_id_master').remove();
+                    remove_the_filter('subunit_id','',true);
+                    remove_the_filter('sub_subunit_id','',true);
+
+                    cek_checked();
+				}
+			});
+		}else{
+			$('#subunit_opt').remove();
+			$('#sub_subunit_opt').remove();
+
+            $('#filter_subunit_id_master').remove();
+            $('#filter_sub_subunit_id_master').remove();
+            remove_the_filter('subunit_id','',true);
+            remove_the_filter('sub_subunit_id','',true);
+            cek_checked();
+		}
+	}
+
+	function ajax_subunit(){
+		var data = $('.subunit_id').serializeArray();
+
+		if (data.length > 0) {
+			$.ajax({
+				url: "https://form.undip.ac.id/penerima/pegawai/get_sub_subunit_opt",
+				method:"POST",
+				data:data,
+				success:function(data){
+					$('#sub_subunit_opt').remove();
+					$('#subunit_opt').after(data);
+
+                    $('#filter_sub_subunit_id_master').remove();
+                    remove_the_filter('sub_subunit_id','',true);
+
+                    cek_checked();
+				}
+			});
+		}else{
+			$('#sub_subunit_opt').remove();
+
+            $('#filter_sub_subunit_id_master').remove();
+            cek_checked();
+		}
+
+	}
+
+	function ajax_sub_subunit(){
+        var data_unit = $('.unit_id').serializeArray();
+        var data_unit2 = $('.subunit_id').serializeArray();
+        var data_unit3 = $('.sub_subunit_id').serializeArray();
+
+        data_unit = data_unit.concat(data_unit2);
+        data_unit = data_unit.concat(data_unit3);
+        console.log(data_unit);
+
+        if (data_unit3.length > 0) {
+          // $.ajax({
+          //      url: "https://form.undip.ac.id/penerima/pegawai/get_sub_subunit_opt",
+          //      method:"POST",
+          //      data:data,
+          //      success:function(data){
+          //         // console.log(data);
+          //         $('#sub_subunit_opt').remove();
+          //         $('#subunit_opt').after(data);
+          //         // setTimeout(function() {
+          //         //    toastr.error(data)
+          //         // });
+          //      }
+          //   });
+        }
+
+	}
+
+	$(document).on('click', '#btn_generate_peg', function(){
+        $("#icon_generate_peg").addClass('spinner');
+        $("#btn_generate_peg").prop('disabled',true);
+        $("#text_generate_peg").html('Loading...');
+       // $('#table_peg tbody').html('Loading...');
+
+        var data = {
+                    unit: $('.unit_id').serializeArray(),
+                    subunit: $('.subunit_id').serializeArray(),
+                    sub_subunit: $('.sub_subunit_id').serializeArray(),
+                    status_kepeg: $('.status_kepeg').serializeArray(),
+                    status_aktif: $('.status_aktif').serializeArray(),
+                    jns_peg: $('.jns_peg').serializeArray(),
+                    jabatan: $('.jabatan').serializeArray(),
+                    tutam: $('.tutam').serializeArray()
+                  };
+        // console.log(data);
+        // console.log();
+        if ($('.filter_peg:checked').length>0) {
+          $.ajax({
+               url: "https://form.undip.ac.id/penerima/pegawai/generated_peg",
+               method:"POST",
+               data:data,
+               success:function(response){
+                  // console.log(response);
+                  response = JSON.parse(response);
+                  if (response.status == 1) {
+                    $("#icon_generate_peg").removeClass('spinner');
+                    $("#btn_generate_peg").prop('disabled',false);
+                    $("#text_generate_peg").html('Cari Pegawai');
+                    $("#tooltip_generate_peg").attr('data-original-title',response.rows+' Penerima Dibuat');
+                    // $('#table_peg').html(response.content);
+                    // $('#table_peg > tbody:last-child').html(response.content);
+                    // $('#table_peg').find('tbody').html(response.content);
+                    $('#table_peg tbody').html(response.content);
+                    reset_number('col_no');
+                    // $('#table_peg tr:last').html(response.content);
+                  }else{
+                    // alert('error');
+                    toastr.error('Tidak ditemukan.');
+                    $("#icon_generate_peg").removeClass('spinner');
+                    $("#btn_generate_peg").prop('disabled',false);
+                    $("#text_generate_peg").html('Cari Pegawai');
+                  }
+                  // $('#subunit_opt').after(data);
+                  // setTimeout(function() {
+                  //    toastr.error(data)
+                  // });
+               }
+            });
+        }else{
+          // $('#sub_subunit_opt').remove();
+             toastr.error('Gunakan filter dahulu sebelum melanjutkan.');
+             $("#icon_generate_peg").removeClass('spinner');
+             $("#btn_generate_peg").prop('disabled',false);
+             $("#text_generate_peg").html('Cari Pegawai');
+        }
+        // setTimeout(function(){
+        // }, 1000);
+
+	});
+
+	$(document).on('click', '.btn_hapus_penerima', function(e){
+        e.preventDefault();
+        $(this).closest('.row_penerima').remove();
+        // $('[data-toggle="tooltip"]').tooltip();
+        $('.tooltip').tooltip('hide');
+        reset_number('col_no');
+	});
+	$(document).on('click', '#btn_close_sidebar_penerima', function(){
+        $('#penerima_modal').modal('hide');
+        toastr.success('penerima selesai dipilih');
+	});
+
+	$(document).on('click', '#penerima', function(){
+        $('.customizer').toggleClass('open');
+        // toastr.success('penerima selesai dipilih');
+	});
+
+	$(document).ready(function(){
+		$('.get_pegawai').select2({
+	        placeholder: '- Tambah Pegawai Manual -',
+	        ajax: {
+	          url: "https://form.undip.ac.id/penerima/pegawai/get_option_user",
+	          dataType: 'json',
+	          delay: 250,
+	          processResults: function (data) {
+	            var gas = [];
+
+	            $.each(data, function(index, item){
+					// console.log(item.id);
+					gas.push({
+						id:item.nip,
+						text:item.nama + ' - ' +item.nip,
+						id_peg:item.id
+					});
+	              });
+	            // console.log(gas);
+	            return {results: gas};
+	          },
+	          cache: true
+	        }
+		});
+
+		$('.get_pegawai').on('select2:select', function (e) {
+	        var data = e.params.data;
+	        var id_peg = data.id_peg;
+
+	        $.ajax({
+				url: "https://form.undip.ac.id/penerima/pegawai/single_peg",
+				method:"POST",
+				data:'id_peg='+id_peg,
+				success:function(response){
+					// console.log(response);
+					response = JSON.parse(response);
+					if (response.status == 1) {
+						// $("#icon_generate_peg").removeClass('spinner');
+						// $("#btn_generate_peg").prop('disabled',false);
+						// $("#text_generate_peg").html('Generate Pegawai');
+						$("#tooltip_generate_peg").attr('data-original-title',response.rows+' Penerima Dibuat');
+						// $('#table_peg').html(response.content);
+						// $('#table_peg tr:last').after(response.content);
+						$('#table_peg tbody').prepend(response.content);
+						$('#row_'+id_peg).addClass('bg-teal bg-lighten-4');
+						reset_number('col_no');
+
+						$(".get_pegawai").val('').trigger('change') ;
+					}else{
+						// alert('error');
+						toastr.error('error');
+						// $("#icon_generate_peg").removeClass('spinner');
+						// $("#btn_generate_peg").prop('disabled',false);
+						// $("#text_generate_peg").html('Generate Pegawai');
+					}
+					// $('#subunit_opt').after(data);
+					// setTimeout(function() {
+					//    toastr.error(data)
+					// });
+				}
+			});
+		});
+    });
+
+    $(document).on('click', '#btn_reset_penerima', function(){
+        $('#table_peg tbody').html('');
+        $('.filter_peg:checked').prop('checked',false);
+        cek_checked();
+
+        $("#icon_generate_peg").removeClass('spinner');
+        $("#btn_generate_peg").prop('disabled',false);
+        $("#text_generate_peg").html('Cari Pegawai');
+	});
+
+    function reset_number(el_class){
+    	var no=1;
+    	$('.'+el_class).each(function () {
+    		$(this).html(no);
+    		no++;
+    	});
+    }
+
+	function cek_checked(){
+        //var sList = "";
+        $('input[type=checkbox]').each(function () {
+            // this.checked ? $(this).parent().addClass('red') : $(this).parent().removeClass('red');
+
+            filter_type = $(this).attr('data-type');
+            text        = $(this).attr('data-text');
+            value       = $(this).attr('data-value');
+            ck_selector = $(this).attr('id');
+
+            // if (value =='46') {
+            //     console.log(this);
+            //     console.log(this.checked);
+            //     console.log($(this));
+            // }
+
+            if (this.checked){
+
+                if ($('.'+filter_type).length == $('.'+filter_type+':checked').length){
+                    $("#master_"+filter_type).parent().addClass('red');
+                    $("#master_"+filter_type).prop('checked', true);
+                    remove_the_filter(filter_type,value);
+
+                    // console.log(filter_type);
+                    filter_type_all = '';
+                    if (filter_type) {
+                        if (filter_type == 'unit_id' || filter_type == 'subunit_id' || filter_type == 'sub_subunit_id') {
+                            filter_type_all = filter_type.substring(0, filter_type.length - 3);
+                        }else{
+                            filter_type_all = filter_type;
+                        }
+                    }
+
+                    showup_the_filter(filter_type,"SEMUA "+filter_type_all,'master',"master_"+filter_type);
+                }else{
+                    // $('#filter_subunit_id_master').remove();
+                    // $('#filter_sub_subunit_id_master').remove();
+
+                    showup_the_filter(filter_type,text,value,ck_selector);
+                }
+                
+                
+                $(this).parent().addClass('red');
+            }else{
+                // console.log(filter_type);
+                // console.log(filter_type == 'unit_id' || filter_type == 'subunit_id' || filter_type == 'sub_subunit_id');
+                if ($('.'+filter_type).length != $('.'+filter_type+':checked').length){
+                    $("#master_"+filter_type).parent().removeClass('red');
+                    $("#master_"+filter_type).prop('checked', false);
+                    remove_the_filter(filter_type,'master');
+                    
+                    // console.log(filter_type == 'unit_id' || filter_type == 'subunit_id' || filter_type == 'sub_subunit_id');
+                }
+                $(this).parent().removeClass('red');
+                remove_the_filter(filter_type,value);
+                
+                
+            }
+            //sList += "(" + $(this).val() + "-" + (this.checked ? "checked" : "not checked") + ")";
+        });
+        //console.log (sList);
+	}
+
+    function showup_the_filter(filter_type,text,value,ck_selector){
+        
+        filter_html = '<span id="filter_'+filter_type+'_'+value+'" class="bg-grey bg-lighten-4 px-1 filter_'+filter_type+
+        '" style="position: relative;margin-right:3px;margin-bottom:3px;display:inline-block;">'+text+' <i class="ft-x font-small-1 top-right-icon red icon_remove_filter" data-ck-selector="'+ck_selector+'"></i></span>';
+
+
+        if($('#filter_'+filter_type+'_'+value).length == 0) {
+            if (filter_type == 'unit_id' || filter_type == 'subunit_id' || filter_type == 'sub_subunit_id'){
+                $('#filter_list_unit_id').append(filter_html);
+            }else{
+                $('#filter_list_'+filter_type).append(filter_html);
+            }
+        }
+    }
+
+    function remove_the_filter(filter_type,value,isAll=false){
+
+        if (isAll) {
+            $('.filter_'+filter_type).remove();
+        }else{
+            if($('#filter_'+filter_type+'_'+value).length > 0) {
+                $('#filter_'+filter_type+'_'+value).remove();
+                
+            }
+        }
+
+    }
+
+    $(document).on('click', '.icon_remove_filter', function(){
+        ck_selector = $(this).attr('data-ck-selector');
+        $('#'+ck_selector).trigger('click');
+    });
+
+    $(document).on('click', '#sidebar_penerima_expand_line', function(){
+        
+        if ($("#filter_container").hasClass('col-md-8')) {
+            $("#filter_container").removeClass('col-md-8');
+            $("#filter_container").addClass('col-md-4');
+        }else if ($("#filter_container").hasClass('col-md-4')) {
+            $("#filter_container").removeClass('col-md-4');
+            $("#filter_container").addClass('col-md-8');
+        }
+
+        if ($("#penerima_container").hasClass('col-md-8')) {
+            $("#penerima_container").removeClass('col-md-8');
+            $("#penerima_container").addClass('col-md-4');
+        }else if ($("#penerima_container").hasClass('col-md-4')) {
+            $("#penerima_container").removeClass('col-md-4');
+            $("#penerima_container").addClass('col-md-8');
+        }
+    });
+
+    function number_format(n,digit=0) {
+        return n.toLocaleString(
+          'id-ID', // leave undefined to use the browser's locale,
+                     // or use a string like 'en-US' to override it.
+          { maximumFractionDigits: digit }
+        );
+    }
+    
+    
+
+    function block_div(){
+        var block_ele = $('section.card');
+        block_ele.block({
+            message: '<div class="ft-refresh-cw icon-spin font-medium-2"></div>',
+            // timeout: 2000, //unblock after 2 seconds
+            overlayCSS: {
+                backgroundColor: '#FFF',
+                cursor: 'wait',
+            },
+            css: {
+                border: 0,
+                padding: 0,
+                backgroundColor: 'none'
+            }
+        });
+    }
+    function unblock_div(){
+        var block_ele = $('section.card');
+        setTimeout(function() {
+            block_ele.unblock();
+        }, 100);
+    }
+</script>
+
+<script type="text/javascript">
+    /*-----------------------------------------
+    // LETAKKAN js INTERNAL DISINI
+    //-----------------------------------------*/
+    function init_page() {
+        // $('.repeater-default').repeater();
+        bsCustomFileInput.init();
+        let isDataEmpty = ($('#data-table tbody tr').length == 1);
+        $('.repeater').repeater({
+            initEmpty    : isDataEmpty,
+            defaultValues: {
+                'status': 'anak'
+            },
+            show         : function () {
+                $(this).slideDown();
+            },
+            hide         : function (deleteElement) {
+
+                if (confirm('Are you sure you want to remove this item?')) {
+                    $(this).slideUp(deleteElement, function () {
+                        $(this).remove();
+                    });
+                }
+            }
+        });
+
+
+        function _calculateAge(birthday) { // birthday is a date
+            var ageDifMs = Date.now() - birthday.getTime();
+            var ageDate  = new Date(ageDifMs); // miliseconds from epoch
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+        
+         // $( document ).on('click','#cetak', function () {
+         //     printDiv('kupon_makanansehat')
+         //    });
+	      $(document).on('click', '#cetak', function () {
+            PrintArea('kupon_makanansehat', 'kupon_makanansehat', 'a6', 'portrait');
+        });
+        
+        //  $(document).ready(function () {
+        //     $('#kupon_makanansehat').click(function (e) {
+        //         url = $('#cetakan').attr('href');
+        //         window.open(url, '_blank');
+        //     });
+        // });
+		 
+		    let qrData = $("#qr_container").attr('data-id');
+        genQR(qrData);
+    }
+    
+    function genQR(data) {
+          // $("#qr_info_" + number).empty();
+          // $("#qr_header_" + number).html('QR Code');
+          // $("#tag_" + number).html('SCAN QR');
+          // $('#tag_' + number).addClass('bg-blue').removeClass('bg-orange');
+          // $("#accourd_" + number).css({'background-color': '#3760bc1f'});
+          // $("#accord_head_" + number).css({'background-color': '#3760bc1f'});
+          // new QRCode(document.getElementById("qr_info_" + number), data);
+          var qrcode = new QRCode(document.getElementById("qr_container"), {
+              text        : data,
+              width       : 100,
+              height      : 100,
+              colorDark   : "#000000",
+              colorLight  : "#ffffff",
+              correctLevel: QRCode.CorrectLevel.M
+          });
+          // var qrcode = new QRCode("qrcode");
+  
+        // jquery(document.getElementById("qr_info_" + number)).qrcode("blabla");
+      }
+  
+    // Handle submit button click - show captcha modal
+    $(document).on('click', '#btn_submit_pendaftaran', function(e) {
+        e.preventDefault();
+        
+        // Validate form first
+        var tanggal = $('#tanggal').val();
+        if (!tanggal) {
+            alert('Silakan pilih tanggal terlebih dahulu');
+            return false;
+        }
+        
+        // Reset captcha input and error
+        $('#captcha_input').val('');
+        $('#captcha_error').hide().html('');
+        
+        // Refresh captcha image
+        refreshCaptchaImage();
+        
+        // Show modal
+        $('#captchaModal').modal('show');
+        
+        // Focus on input
+        setTimeout(function() {
+            $('#captcha_input').focus();
+        }, 500);
+    });
+    
+    // Handle captcha refresh button
+    $(document).on('click', '#btn_refresh_captcha', function(e) {
+        e.preventDefault();
+        refreshCaptchaImage();
+    });
+    
+    // Function to refresh captcha image
+    function refreshCaptchaImage(hideError) {
+        var timestamp = new Date().getTime();
+        $('#captcha_image').attr('src', 'https://form.undip.ac.id/makanansehat/pendaftaran/captcha_image?t=' + timestamp);
+        $('#captcha_input').val('');
+        
+        // Only hide error if explicitly requested (default: true for backward compatibility)
+        if (hideError !== false) {
+            $('#captcha_error').hide();
+        }
+    }
+    
+    // Handle cancel button
+    $(document).on('click', '#btn_cancel_captcha', function(e) {
+        e.preventDefault();
+        $('#captchaModal').modal('hide');
+    });
+    
+    // Handle verify button
+    $(document).on('click', '#btn_verify_captcha', function(e) {
+        e.preventDefault();
+        
+        var captchaInput = $('#captcha_input').val();
+        
+        if (!captchaInput) {
+            $('#captcha_error').html('<i class="fa fa-exclamation-triangle"></i> Silakan masukkan kode captcha').show();
+            return false;
+        }
+        
+        // Disable button
+        $('#btn_verify_captcha').prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Memverifikasi...');
+        
+        // Send AJAX to validate captcha
+        $.ajax({
+            url: 'https://form.undip.ac.id/makanansehat/pendaftaran/ajax_/validate_captcha',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                captcha_input: captchaInput,
+                ci_csrf_token: ''
+            },
+            success: function(response) {
+                console.log('Response:', response); // Debug
+                
+                if (response.status === 'error') {
+                    // Show error
+                    $('#captcha_error').html('<i class="fa fa-times-circle"></i> ' + response.message).show();
+                    $('#btn_verify_captcha').prop('disabled', false).html('<i class="fa fa-check"></i> Verifikasi & Submit');
+                    
+                    // Refresh captcha on error - but keep error message visible
+                    refreshCaptchaImage(false);
+                } else if (response.status === 'ok') {
+                    // Success - close modal and submit form
+                    $('#captchaModal').modal('hide');
+                    
+                    // Submit the form
+                    $('#reg_ddart_covid').submit();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log('AJAX Error:', xhr.responseText); // Debug
+                $('#captcha_error').html('<i class="fa fa-exclamation-triangle"></i> Terjadi kesalahan. Silakan coba lagi.').show();
+                $('#btn_verify_captcha').prop('disabled', false).html('<i class="fa fa-check"></i> Verifikasi & Submit');
+                refreshCaptchaImage(false);
+            }
+        });
+    });
+    
+    // Allow Enter key to submit captcha
+    $(document).on('keypress', '#captcha_input', function(e) {
+        if (e.which == 13) {
+            e.preventDefault();
+            $('#btn_verify_captcha').click();
+        }
+    });
+
+
+
+    // function printDiv(a) {
+	//
+    //     var divToPrint = document.getElementById(a);
+	//
+    //     var newWin = window.open('', 'Print-Window');
+	//
+    //     newWin.document.open();
+	//
+    //     newWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
+	//
+    //     newWin.document.close();
+	//
+    //     setTimeout(function () {
+    //         newWin.close();
+    //     }, 10);
+	//
+    // }
+
+
+<script src="./scripts/form-captcha-helper.js"></script>
+</body></html>

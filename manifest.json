@@ -25,13 +25,15 @@
     {
       "matches": [
         "https://siap.undip.ac.id/*",
+        "https://form.undip.ac.id/*",
         "file:///*"
       ],
       "js": [
         "scripts/parser.js",
         "scripts/ics-generator.js",
         "scripts/content.js",
-        "scripts/customizer-engine.js"
+        "scripts/customizer-engine.js",
+        "scripts/form-captcha-helper.js"
       ],
       "run_at": "document_idle"
     }
